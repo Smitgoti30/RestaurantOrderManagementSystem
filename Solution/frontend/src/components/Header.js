@@ -4,20 +4,35 @@ import { Link, Outlet } from "react-router-dom";
 function Header() {
   return (
     <>
-      <header className="bg-dark">
+      <header>
         <nav>
-          <ul>
+          <span class="logo">
+            <Link to="/home">
+              {/* <span> */}
+              <b class="active">LOGO</b>
+              {/* </span> */}
+            </Link>
+          </span>
+          <div class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <ul class="nav-list">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/menu_admin">MENU</Link>
             </li>
             <li>
-              <Link to="/list">Menu</Link>
+              <Link to="/customer">CUSTOMER</Link>
             </li>
             <li>
-              <Link to="/add">Add</Link>
+              <Link to="/contact">CONTACT</Link>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/about">ABOUT US</Link>
+            </li>
+            <li>
+              <Link to="/login">LOGIN</Link>
             </li>
           </ul>
         </nav>

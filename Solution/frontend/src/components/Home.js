@@ -7,7 +7,7 @@ function Home() {
     <>
       <div className="index">
         <section className="cls-home-links">
-          <Link to="/list">Menu</Link>
+          <Link to="/menu_admin">Admin Menu</Link>
           <Link to="/add">ADD</Link>
         </section>
         {/* <section className="image">
