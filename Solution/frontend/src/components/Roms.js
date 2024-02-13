@@ -8,6 +8,7 @@ import Customer from "./Customer";
 import MenuAdmin from "./MenuAdmin";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
+import CategoryLayout from "./CategoryLayout";
 
 function Roms(props) {
   return (
@@ -33,6 +34,15 @@ function Roms(props) {
                   <br></br>
                   <Customer />
                 </>
+              }
+            />
+            <Route
+              path="/menu_customer"
+              element={
+              <>
+                <br></br>
+              <CategoryLayout />
+              </>
               }
             />
             <Route

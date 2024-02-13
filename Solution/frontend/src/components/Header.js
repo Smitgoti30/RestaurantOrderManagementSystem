@@ -34,6 +34,9 @@ function Header() {
             <li>
               <Link to="/login">LOGIN</Link>
             </li>
+            <li>
+              <Link to="/menu_customer">MC</Link>
+            </li>
           </ul>
         </nav>
       </header>
