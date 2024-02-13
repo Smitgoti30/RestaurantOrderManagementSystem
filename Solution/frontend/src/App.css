@@ -770,3 +770,153 @@ tbody tr:hover {
   background-color: #333;
   margin: 10px auto;
 }
+.product-card {
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+.product-card .input-fields.btns .btn {
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+}
+.place_order .input-fields.btns {
+  flex-direction: column;
+}
+.logo,
+h1 {
+  font-size: 26px;
+}
+
+
+.about-container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.about-header {
+text-align: center;
+font-size: 2rem;
+color: #333;
+margin-bottom: 20px;
+}
+
+.about-content {
+line-height: 1.6;
+}
+
+.about-content p {
+margin-bottom: 15px;
+}
+
+.about-content p:last-child {
+margin-bottom: 0;
+}
+
+.about-content p:first-child {
+font-weight: bold;
+}
+
+.about-content p:first-child::after {
+content: "";
+display: block;
+width: 50px;
+height: 3px;
+background-color: #333;
+margin: 10px auto;
+}
+body {
+position: relative;
+}
+
+.bg-light {
+background-color: #f8f9fa;
+width: 250px;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+list-style-type: none;
+padding-left: 0 !important;
+}
+
+li {
+margin-bottom: 20px;
+}
+
+h3 {
+color: #333;
+font-size: 18px;
+margin-bottom: 5px;
+}
+
+p {
+color: #666;
+font-size: 14px;
+margin: 0;
+}
+
+.card-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+.sidemenu {
+position: fixed;
+height: 100vh;
+}
+
+.menu {
+position: relative;
+}
+.menusidebar {
+height: 100vh;
+background-color: #f6c1c1 !important;
+padding: 20px;
+}
+.content-menu {
+margin: 370px;
+}
+.text-red {
+color: #ef4444;
+}
+.bg-red {
+background-color: #ef4444;
+}
+
+.btn-red {
+border: 1px solid black;
+border-radius: 2px;
+background-color: #ef4444;
+color: white;
+}
+.nav-link {
+color: #fff !important;
+}
+.navbar-brand {
+color: #fff !important;
+}
+a {
+color: #ef4444 !important;
+text-decoration: none !important;
+font-size: 20px;
+}
+.menu-list-items {
+border-bottom: 1px solid #fff !important;
+padding-bottom: 15px;
+}
+.item-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.btn-qty {
+border: 2px solid #ef4444;
+border-radius: 5%;
+display: flex;
+}
