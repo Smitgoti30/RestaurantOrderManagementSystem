@@ -50,7 +50,7 @@ function Footer() {
           <div class="copy">
             <p>Deepam Patel | 8812460 </p>
             <p>Smit Goti | 8812460 </p>
-            <p>Shivang Patel | 8812460 </p>
+            <p>Shivang Patel | 8865389 </p>
           </div>
         </div>
       </footer>

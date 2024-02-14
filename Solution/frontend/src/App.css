@@ -920,3 +920,137 @@ border: 2px solid #ef4444;
 border-radius: 5%;
 display: flex;
 }
+
+/* css code for the contact-us page. */
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #282c34;
+}
+
+.contact-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  width: 600px;
+  height: auto;
+  margin: 25px 35px;
+  padding: 30px;
+  box-shadow: 0 0 20px 3px #fff;
+}
+
+/* css code for the login- registration page. */
+
+.login-div {
+  background-color: #ef4444;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  color: #282c34;
+  padding: 10px 0 0 0;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  width: 300px;
+  height: auto;
+  margin: 55px 35px 85px 35px;
+  padding: 30px;
+  box-shadow: 0 0 20px 3px #fff;
+}
+
+.from-box {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 25px;
+  width: 300px;
+  height: auto;
+  margin: 35px 35px;
+
+}
+
+.button-box {
+  width: 220px;
+  height: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #f2f2f2;
+  border-radius: 20px;
+}
+
+.toggle-btn {
+  display: flex;
+  background-color: #ef4444;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  cursor: pointer;
+  width: 50%;
+  border: 0;
+  border-radius: 20px;
+  outline: none;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.input-field {
+  /* color: #fff; */
+  margin: 15px 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: auto;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  /* padding: 10px 10px; */
+  margin: 15px 15px;
+}
+
+label {
+  width: auto;
+  /* background: transparent; */
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+}
+
+#btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 100px;
+  background-color: #ef4444;
+  border-radius: 30px;
+  transition: 1s;
+}
+
+#login {
+  left: 50%;
+}
+
+#register {
+  left: 50%;
+}
