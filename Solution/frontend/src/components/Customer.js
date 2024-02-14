@@ -5,13 +5,13 @@ function Customer() {
     <div>
       <h1>Customer Information</h1>
       <div>
-        <div class="container">
-          <div class="contact">
-            <form class="form" action="/customer" method="POST">
+        <div className="container">
+          <div className="contact">
+            <form className="form" action="/customer" method="POST">
               <fieldset>
-                <div class="contactform">
-                  <div class="left">
-                    <div class="input-fields">
+                <div className="contactform">
+                  <div className="left">
+                    <div className="input-fields">
                       <label for="FirstName">First Name *</label>
                       <input
                         type="text"
@@ -22,7 +22,7 @@ function Customer() {
                       />
                       <small>Error</small>
                     </div>
-                    <div class="input-fields">
+                    <div className="input-fields">
                       <label for="LastName">Last Name *</label>
                       <input
                         type="text"
@@ -33,7 +33,7 @@ function Customer() {
                       />
                       <small>Error</small>
                     </div>
-                    <div class="input-fields">
+                    <div className="input-fields">
                       <label for="PreferredLanguage">Preferred Language</label>
                       <input
                         type="text"
@@ -43,13 +43,13 @@ function Customer() {
                       />
                     </div>
 
-                    <div class="input-fields">
+                    <div className="input-fields">
                       <label for="DateOfBirth">Date of Birth</label>
                       <input type="date" name="DateOfBirth" id="DateOfBirth" />
                     </div>
                   </div>
-                  <div class="right">
-                    <div class="input-fields">
+                  <div className="right">
+                    <div className="input-fields">
                       <label for="EmailAddress"> Email Address *</label>
                       <input
                         type="email"
@@ -61,7 +61,7 @@ function Customer() {
                       <small>Error</small>
                     </div>
 
-                    <div class="input-fields">
+                    <div className="input-fields">
                       <label for="PhoneNumber"> Phone Number *</label>
                       <input
                         type="tel"
@@ -74,7 +74,7 @@ function Customer() {
                       <small>Error</small>
                     </div>
 
-                    <div class="input-fields">
+                    <div className="input-fields">
                       <label for="MembershipStatus">Membership Status</label>
                       <input
                         type="text"
@@ -86,9 +86,9 @@ function Customer() {
                     </div>
                   </div>
                 </div>
-                <div class="input-fields btns">
+                <div className="input-fields btns">
                   <input
-                    class="submit button"
+                    className="submit button"
                     type="submit"
                     value="ADD CUSTOMER"
                   />

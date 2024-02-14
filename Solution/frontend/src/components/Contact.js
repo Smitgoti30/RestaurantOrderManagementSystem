@@ -21,12 +21,12 @@ function Contact() {
     <div className="contact-us">
       <h1>Contact Us</h1>
       <p>Get in touch with us! We'd love to hear from you.</p>
-      <div class="contact-div">
-        <form class="form-box" onSubmit={handleSubmit}>
+      <div className="contact-div">
+        <form className="form-box" onSubmit={handleSubmit}>
           <label>
             Your Name*:
             <input
-              class="input"
+              className="input"
               type="text"
               name="name"
               value={formData.name}
@@ -37,7 +37,7 @@ function Contact() {
           <label>
             Your Email Address*:
             <input
-              class="input"
+              className="input"
               type="email"
               name="email"
               value={formData.email}
@@ -48,14 +48,14 @@ function Contact() {
           <label>
             Your Message*:
             <textarea
-              class="input"
+              className="input"
               name="message"
               value={formData.message}
               onChange={handleChange}
               required
             ></textarea>
           </label>
-          <button class="toggle-btn" type="submit">
+          <button className="toggle-btn" type="submit">
             Send
           </button>
         </form>

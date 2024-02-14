@@ -6,19 +6,19 @@ function Header() {
     <>
       <header>
         <nav>
-          <span class="logo">
+          <span className="logo">
             <Link to="/home">
               {/* <span> */}
-              <b class="active">LOGO</b>
+              <b className="active">LOGO</b>
               {/* </span> */}
             </Link>
           </span>
-          <div class="menu-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+          <div className="menu-icon">
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
           </div>
-          <ul class="nav-list">
+          <ul className="nav-list">
             <li>
               <Link to="/menu_admin">MENU</Link>
             </li>
