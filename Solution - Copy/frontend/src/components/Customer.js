@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
-import { ADD_CUSTOMER } from "../graphql/Mutations";
-import { GET_ALL_CUSTOMERS } from "../graphql/Queries";
+import { ADD_CUSTOMER } from "../graphql/Mutation";
+import { GET_ALL_CUSTOMERS } from "../graphql/Query";
 import { Link } from "react-router-dom";
 
 function Customer() {
@@ -33,8 +33,8 @@ function Customer() {
     }
   };
 
-  if (loading) return <p style={{textAlign:"center", padding: "10px"}}>Loading...</p>;
-  // if (error) return <p>Error: {error.message}</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div>

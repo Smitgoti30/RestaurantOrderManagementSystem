@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import Login from "./Login";
-import Register from "./Register";
 
 const Authentication = () => {
   const [isLogginActive, setIsLogginActive] = useState(true);

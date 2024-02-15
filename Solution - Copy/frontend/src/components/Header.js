@@ -7,9 +7,9 @@ function Header() {
       <header>
         <nav>
           <span className="logo">
-            <Link to="/menu_customer">
+            <Link to="/home">
               {/* <span> */}
-              <b className="active">&nbsp; R.O.M.S</b>
+              <b className="active">LOGO</b>
               {/* </span> */}
             </Link>
           </span>
@@ -34,9 +34,9 @@ function Header() {
             <li>
               <Link to="/login">LOGIN</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/menu_customer">MC</Link>
-            </li> */}
+            </li>
           </ul>
         </nav>
       </header>

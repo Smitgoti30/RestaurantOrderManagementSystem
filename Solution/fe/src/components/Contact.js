@@ -24,7 +24,7 @@ function Contact() {
       <div className="contact-div">
         <form className="sp-contact-from-box" onSubmit={handleSubmit}>
           <label className="sp-contact-label">
-             Name
+            Your Name:
             <input
               className="sp-contact-input"
               type="text"
@@ -35,7 +35,7 @@ function Contact() {
             />
           </label>
           <label className="sp-contact-label">
-             Email Address
+            Your Email Address:
             <input
               className="sp-contact-input"
               type="email"
@@ -46,7 +46,7 @@ function Contact() {
             />
           </label>
           <label className="sp-contact-label">
-             Message
+            Your Message:
             <textarea
               className="sp-contact-input"
               name="message"

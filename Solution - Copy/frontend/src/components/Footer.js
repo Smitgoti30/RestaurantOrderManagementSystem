@@ -26,7 +26,7 @@ function Footer() {
           <div className="logo">
             <a href="customer">
               <span>
-                <b className="active">&nbsp; R.O.M.S</b>
+                <b className="active">LOGO</b>
               </span>
             </a>
           </div>
@@ -49,7 +49,7 @@ function Footer() {
           </strong>
           <div className="copy">
             <p>Deepam Patel | 8812460 </p>
-            <p>Smit Goti | 8871022 </p>
+            <p>Smit Goti | 8812460 </p>
             <p>Shivang Patel | 8865389 </p>
           </div>
         </div>

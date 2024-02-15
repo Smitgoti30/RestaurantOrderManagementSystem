@@ -10,6 +10,7 @@ import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import CategoryLayout from "./CategoryLayout";
 import Login from "./Login";
+import Authentication from "./Authentication";
 
 function Roms(props) {
   return (
@@ -17,7 +18,7 @@ function Roms(props) {
       <main>
         <Routes>
           <Route path="/" element={<Header />}>
-            <Route index element={<><br></br><CategoryLayout /></>} />
+            <Route index element={<Home />} />
             <Route
               path="menu"
               element={
@@ -77,7 +78,8 @@ function Roms(props) {
               path="/login"
               element={
                 <>
-                  <Login />
+                  <br></br>
+                  <Authentication />
                 </>
               }
             />

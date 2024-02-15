@@ -9,7 +9,8 @@ import MenuAdmin from "./MenuAdmin";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import CategoryLayout from "./CategoryLayout";
-import Login from "./Login";
+// import Login from "./Login";
+// import Authentication from "./Authentication";
 
 function Roms(props) {
   return (
@@ -73,14 +74,15 @@ function Roms(props) {
                 </>
               }
             />
-            <Route
+            {/* <Route
               path="/login"
               element={
                 <>
-                  <Login />
+                  <br></br>
+                  <Authentication />
                 </>
               }
-            />
+            /> */}
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

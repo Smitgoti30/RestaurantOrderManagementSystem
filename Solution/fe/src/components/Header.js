@@ -9,7 +9,7 @@ function Header() {
           <span className="logo">
             <Link to="/menu_customer">
               {/* <span> */}
-              <b className="active">&nbsp; R.O.M.S</b>
+              <b className="active">LOGO</b>
               {/* </span> */}
             </Link>
           </span>

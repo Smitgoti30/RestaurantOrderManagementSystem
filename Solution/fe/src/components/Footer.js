@@ -26,7 +26,7 @@ function Footer() {
           <div className="logo">
             <a href="customer">
               <span>
-                <b className="active">&nbsp; R.O.M.S</b>
+                <b className="active">LOGO</b>
               </span>
             </a>
           </div>
