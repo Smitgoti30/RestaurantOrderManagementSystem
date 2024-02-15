@@ -10,6 +10,8 @@ import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import CategoryLayout from "./CategoryLayout";
 import Login from "./Login";
+import Authentication from "./Authentication";
+import Register from "./Register";
 
 function Roms(props) {
   return (
@@ -77,7 +79,6 @@ function Roms(props) {
               path="/login"
               element={
                 <>
-                  <br></br>
                   <Login />
                 </>
               }

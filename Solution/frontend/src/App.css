@@ -1004,9 +1004,18 @@ display: flex;
   outline: 0;
   padding: 10px 15px;
 }
+.sp-base-container .contact-content .contact-form .form-group-contact input:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 14px 0.3px #0e81ce96;
+}
+
+.sp-base-container .contact-content .contact-form .form-group-contact input:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px 0.8px #3474dbb2;
+}
 /* css for new login register page.//////// */
 .sp-login{
-  background-color: #ef4444;
+  
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1016,18 +1025,29 @@ display: flex;
     color: #282c34;
     padding: 10px 0 0 0;
 }
-
+.sp-center {
+  margin: auto;
+}
+.sp-center button {
+  width: 100px;
+  font-weight: 600;
+  color: #fff;
+}
 .sp-base-container {
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #f2f2f2;
-  border-radius: 25px;
   width: 300px;
   height: auto;
   margin: 55px 35px 85px 35px;
   padding: 30px;
-  box-shadow: 0 0 20px 3px #fff;
+  box-shadow: 0 0 12px 2px #000;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .sp-base-container .login-content {
@@ -1052,15 +1072,21 @@ display: flex;
   align-items: flex-start;
   width: fit-content;
 }
-
-.form-group-login input {
+.sp-login-container {
+  display: flex;
+  flex-direction: row;
+background-color: #ef4444;
+align-items: center;
+}
+.sp-login .form-group-login input {
   width: auto;
-  background: transparent;
-  border: 0;
   outline: 0;
-  margin: 15px 15px;
+  margin: 15px 0px;
 }
 
+.sp-h1 {
+  color: #ef4444;
+}
 .sp-base-container .login-content .form .form-group-login label {
   font-size: 20px;
 }
@@ -1110,7 +1136,7 @@ display: flex;
 
 /* Home.css */
 
-.container {
+.home .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -1141,17 +1167,17 @@ display: flex;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.login-register-container h1 {
   font-size: 36px;
   margin-bottom: 20px;
 }
 
-h2 {
+.login-register-container h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-.form-group {
+.login-register-container .form-group {
   margin-bottom: 15px;
 }
 
