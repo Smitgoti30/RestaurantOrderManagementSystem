@@ -99,6 +99,7 @@ function Customer() {
                   </div>
                   <input
                     className="btn btn-danger"
+                    className="btn btn-danger"
                     type="submit"
                     value="ADD CUSTOMER"
                   />
