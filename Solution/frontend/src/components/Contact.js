@@ -22,11 +22,11 @@ function Contact() {
       <h1>Contact Us</h1>
       <p>Get in touch with us! We'd love to hear from you.</p>
       <div className="contact-div">
-        <form className="form-box" onSubmit={handleSubmit}>
-          <label>
-            Your Name*:
+        <form className="sp-contact-from-box" onSubmit={handleSubmit}>
+          <label className="sp-contact-label">
+            Your Name:
             <input
-              className="input"
+              className="sp-contact-input"
               type="text"
               name="name"
               value={formData.name}
@@ -34,10 +34,10 @@ function Contact() {
               required
             />
           </label>
-          <label>
-            Your Email Address*:
+          <label className="sp-contact-label">
+            Your Email Address:
             <input
-              className="input"
+              className="sp-contact-input"
               type="email"
               name="email"
               value={formData.email}
@@ -45,17 +45,17 @@ function Contact() {
               required
             />
           </label>
-          <label>
-            Your Message*:
+          <label className="sp-contact-label">
+            Your Message:
             <textarea
-              className="input"
+              className="sp-contact-input"
               name="message"
               value={formData.message}
               onChange={handleChange}
               required
             ></textarea>
           </label>
-          <button className="toggle-btn" type="submit">
+          <button className="sp-contact-submit-btn" type="submit">
             Send
           </button>
         </form>
