@@ -151,15 +151,15 @@ function MenuAdmin() {
   return (
     <>
       <div>
-        <div class="container">
+        <div className="container">
           <h1>Menu Category</h1>
-          <div class="contact">
-            <form class="form" action="/addcategory" method="POST">
+          <div className="contact">
+            <form className="form" action="/addcategory" method="POST">
               <fieldset>
-                <div class="menu-item">
-                  <div class="contactform">
-                    <div class="left">
-                      <div class="input-fields">
+                <div className="menu-item">
+                  <div className="contactform">
+                    <div className="left">
+                      <div className="input-fields">
                         <label for="CategoryName">Category Name:</label>
                         <input
                           type="text"
@@ -168,7 +168,7 @@ function MenuAdmin() {
                           required
                         />
                       </div>
-                      <div class="input-fields">
+                      <div className="input-fields">
                         <label for="categoryDescription">Description:</label>
                         <textarea
                           name="Description"
@@ -181,9 +181,9 @@ function MenuAdmin() {
                     </div>
                   </div>
                 </div>
-                <div class="input-fields btns">
+                <div className="input-fields btns">
                   <input
-                    class="submit button"
+                    className="submit button"
                     type="submit"
                     value="ADD CATEGORY"
                   />
@@ -193,13 +193,13 @@ function MenuAdmin() {
           </div>
 
           <h1>Menu Item</h1>
-          <div class="contact">
-            <form class="form" action="/addmenuitem" method="POST">
+          <div className="contact">
+            <form className="form" action="/addmenuitem" method="POST">
               <fieldset>
-                <div class="menu-item">
-                  <div class="contactform">
-                    <div class="left">
-                      <div class="input-fields">
+                <div className="menu-item">
+                  <div className="contactform">
+                    <div className="left">
+                      <div className="input-fields">
                         <label for="Category">Category:</label>
                         <select name="Category" id="itemCategory" required>
                           {categories.map((category) => (
@@ -209,7 +209,7 @@ function MenuAdmin() {
                           ))}
                         </select>
                       </div>
-                      <div class="input-fields">
+                      <div className="input-fields">
                         <label for="ItemName">Item Name:</label>
                         <input
                           type="text"
@@ -218,7 +218,7 @@ function MenuAdmin() {
                           required
                         />
                       </div>
-                      <div class="input-fields">
+                      <div className="input-fields">
                         <label for="Price">Price:</label>
                         <input
                           type="number"
@@ -229,8 +229,8 @@ function MenuAdmin() {
                         />
                       </div>
                     </div>
-                    <div class="right">
-                      <div class="input-fields">
+                    <div className="right">
+                      <div className="input-fields">
                         <label for="itemDescription">Description:</label>
                         <textarea
                           name="Description"
@@ -240,7 +240,7 @@ function MenuAdmin() {
                           required
                         ></textarea>
                       </div>
-                      <div class="input-fields">
+                      <div className="input-fields">
                         <label for="AvailableQuantity">Item Quantity:</label>
                         <input
                           type="number"
@@ -254,9 +254,9 @@ function MenuAdmin() {
                   </div>
                 </div>
 
-                <div class="input-fields btns">
+                <div className="input-fields btns">
                   <input
-                    class="submit button"
+                    className="submit button"
                     type="submit"
                     value="ADD TO MENU"
                   />
@@ -266,24 +266,24 @@ function MenuAdmin() {
           </div>
 
           <h1>Menu</h1>
-          <div class="contact">
-            <div class="form">
+          <div className="contact">
+            <div className="form">
               <fieldset>
                 {menuItems.map((menuItem) => (
-                  <div class="product-card">
-                    <div class="product-info">
-                      <h3 class="product-title"> {menuItem.ItemName}</h3>
-                      <p class="product-description">{menuItem.Description}</p>
-                      <p class="product-price">$ {menuItem.Price.toFixed(2)}</p>
+                  <div className="product-card">
+                    <div className="product-info">
+                      <h3 className="product-title"> {menuItem.ItemName}</h3>
+                      <p className="product-description">{menuItem.Description}</p>
+                      <p className="product-price">$ {menuItem.Price.toFixed(2)}</p>
                     </div>
-                    <div class="input-fields btns">
+                    <div className="input-fields btns">
                       <form action="/removeitem" method="POST">
                         <input
                           type="hidden"
                           name="ItemId"
                           value=" ${menuItem._id}"
                         />
-                        <button class="btn remove-button" type="submit">
+                        <button className="btn remove-button" type="submit">
                           REMOVE
                         </button>
                       </form>
@@ -291,10 +291,10 @@ function MenuAdmin() {
                   </div>
                 ))}
                 <br />
-                <div class="input-fields btns">
+                <div className="input-fields btns">
                   <form action="/pdf" method="POST">
                     <input
-                      class="submit button"
+                      className="submit button"
                       type="submit"
                       value="Print Menu"
                     />

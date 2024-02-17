@@ -22,9 +22,9 @@ const customerSchema = mongoose.Schema({
   firstName: { type: String },
   lastName: { type: String },
   phone: { type: Number },
-  email: { type: String, required: true },
-  type: { type: String, required: true }, // online // dining
-  password: { type: String, required: true },
+  email: { type: String},
+  type: { type: String }, // online // dining
+  password: { type: String },
 });
 
 const Customer = mongoose.model("employee", customerSchema);

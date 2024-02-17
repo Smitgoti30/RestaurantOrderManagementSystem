@@ -6,19 +6,19 @@ function Header() {
     <>
       <header>
         <nav>
-          <span class="logo">
-            <Link to="/home">
+          <span className="logo">
+            <Link to="/menu_customer">
               {/* <span> */}
-              <b class="active">LOGO</b>
+              <b className="active">&nbsp; R.O.M.S</b>
               {/* </span> */}
             </Link>
           </span>
-          <div class="menu-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+          <div className="menu-icon">
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
           </div>
-          <ul class="nav-list">
+          <ul className="nav-list">
             <li>
               <Link to="/menu_admin">MENU</Link>
             </li>
@@ -34,9 +34,9 @@ function Header() {
             <li>
               <Link to="/login">LOGIN</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/menu_customer">MC</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </header>

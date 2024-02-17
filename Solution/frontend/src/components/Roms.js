@@ -17,7 +17,7 @@ function Roms(props) {
       <main>
         <Routes>
           <Route path="/" element={<Header />}>
-            <Route index element={<Home />} />
+            <Route index element={<><br></br><CategoryLayout /></>} />
             <Route
               path="menu"
               element={
@@ -77,7 +77,6 @@ function Roms(props) {
               path="/login"
               element={
                 <>
-                  <br></br>
                   <Login />
                 </>
               }

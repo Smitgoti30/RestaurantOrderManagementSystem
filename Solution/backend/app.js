@@ -35,7 +35,7 @@ type Mutation{}
 
 const resolvers = {
   Query: {
-    getAllcustomers: async (parent, args, context, info) => {
+    getAllCustomers: async (parent, args, context, info) => {
       try {
         return await Customer.find({});
       } catch (error) {
@@ -43,8 +43,19 @@ const resolvers = {
       }
     },
   },
-  Mutation: {},
+  Mutation: {
+    addCustomer: async (parent, { input }, context, info) => {
+      try {
+        const newCustomer = new Customer(input);
+        await newCustomer.save();
+        return newCustomer;
+      } catch (error) {
+        throw new Error("Unable to add customer");
+      }
+    },
+  },
 };
+
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.

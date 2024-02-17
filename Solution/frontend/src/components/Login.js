@@ -1,79 +1,79 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+// import loginImg from "../../login.svg";
 
-const Login = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  // const [isRegister, setIsRegister] = useState(true);
-  const [formData, setFormData] = useState({
-    emailOrUsername: "",
-    password: "",
-    confirmPassword: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission (login or registration) here
-    // You can make API calls or perform other actions based on the form data
-    console.log("Form submitted:", formData);
-  };
-
+const Login = (props) => {
   return (
-    <div className="login-div">
-      <h1>Login | Register</h1>
-      <div class="form-div">
-        <div class="button-box">
-          <button class="toggle-btn" onClick={() => setIsLogin(!isLogin)}>
-            {isLogin ? "Register" : "Login"}
-          </button>
+    <>
+      <div className="sp-login-container">
+        <div className="sp-login">
+          <div className="sp-base-container" ref={props.containerRef}>
+            <h1 className="sp-h1">Login</h1>
+            <div className="login-content">
+              <div className="login-form">
+                <div className="form-group-login">
+                  <label htmlFor="email">Email</label>
+                  <input type="text" name="email" placeholder="email" />
+                </div>
+                <div className="form-group-login">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="footer sp-center">
+              <button className="sp-login-submit-btn" type="button">
+                Login
+              </button>
+            </div>
+          </div>
         </div>
+        <div className="sp-login">
+          <div className="sp-base-container" ref={props.containerRef}>
+            <h1 className="sp-h1">Register</h1>
 
-        <form class="form-box" onSubmit={handleSubmit}>
-          <label>Your Name*: </label>
-          <input
-            class="input"
-            type="text"
-            name="emailOrUsername"
-            placeholder="Enter email or username"
-            value={formData.emailOrUsername}
-            onChange={handleInputChange}
-            required
-          />
-
-          <label>Your Email Address*: </label>
-          <input
-            class="input"
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleInputChange}
-            required
-          />
-
-          {!isLogin && (
-            <input
-              class="input"
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
-              required
-            />
-          )}
-
-          <button class="toggle-btn" type="submit">
-            {isLogin ? "Login" : "Register"}
-          </button>
-        </form>
+            <div className="login-content">
+              <div className="login-form">
+                <div className="form-group-login">
+                  <label htmlFor="email">Email</label>
+                  <input type="text" name="email" placeholder="email" />
+                </div>
+                <div className="form-group-login">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                  />
+                </div>
+                <div className="form-group-login">
+                  <label htmlFor="password">Confirm Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="confirm password"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="footer sp-center">
+              <button className="sp-login-submit-btn" type="button">
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Add additional elements like social login buttons here */}
-    </div>
+      <div style={{ padding: "10px", textAlign: "center" }}>
+        <Link>
+          <u>Forget Password</u>
+        </Link>
+      </div>
+    </>
   );
 };
 
