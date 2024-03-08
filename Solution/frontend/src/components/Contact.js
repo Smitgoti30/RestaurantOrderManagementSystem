@@ -18,48 +18,51 @@ function Contact() {
     // You can add your logic here to handle form submission (e.g., send an email).
   };
   return (
-    <div className="contact-us">
+    <div className="row">
       <h1>Contact Us</h1>
-      <p>Get in touch with us! We'd love to hear from you.</p>
-      <div className="contact-div">
-        <form className="sp-contact-from-box" onSubmit={handleSubmit}>
-          <label className="sp-contact-label">
-             Name
-            <input
-              className="sp-contact-input"
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+      <p className="text-center">Get in touch with us! We'd love to hear from you.</p>
+      <div className="col-4"></div>
+      <form className="col-4 m-3 p-4 contact-us text-center" onSubmit={handleSubmit}>
+        <div>
+          <label>
+            Your Name*:
           </label>
-          <label className="sp-contact-label">
-             Email Address
-            <input
-              className="sp-contact-input"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>
+            Your Email Address*:
           </label>
-          <label className="sp-contact-label">
-             Message
-            <textarea
-              className="sp-contact-input"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label>
+            Your Message*:
           </label>
-          <button className="sp-contact-submit-btn" type="submit">
-            Send
-          </button>
-        </form>
-      </div>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+        <br />
+        <button className="btn btn-red" type="submit">Send</button>
+      </form>
     </div>
   );
 }
