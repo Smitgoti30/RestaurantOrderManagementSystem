@@ -144,6 +144,9 @@ footer {
 .contact .form {
   width: 1000px;
 }
+.cls-customer .form {
+  width: 100%;
+}
 .contact.login .form {
   width: 500px;
 }
@@ -157,16 +160,30 @@ footer {
   overflow: hidden;
   border: none;
 }
+.cls-customer .form fieldset {
+  padding: 24px;
+}
 .contact .form fieldset .contactform {
   display: flex;
   gap: 80px;
+}
+.cls-customer .form fieldset .contactform {
+  align-items: center;
+  justify-content: center;
+}
+
+.cls-customer .form fieldset .contactform {
+  gap: 55px;
+}
+.cls-customer .btn {
+  height: 44px;
 }
 .contact .form fieldset .contactform .left,
 .contact .form fieldset .contactform .right {
   flex: 1;
 }
-.contact .form fieldset .input-fields {
-  margin-bottom: 20px;
+.contact .form fieldset .btns {
+  margin-top: 20px;
 }
 .contact .form fieldset .input-fields label,
 .contact .form fieldset .input-fields input {
