@@ -7,6 +7,7 @@ import Customer from "./Customer";
 import MenuAdmin from "./admin/menu/MenuAdmin";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
+import Login from "./Login";
 import Layout from "./theme/layout";
 import CategoryLayout from "./CategoryLayout";
 
