@@ -26,7 +26,7 @@ function Footer() {
             </div>
             <div className="col text-center">
               <div className="logo">
-                <a href="customer">
+                <a href="/">
                   <span>
                     <b className="active">LOGO</b>
                   </span>

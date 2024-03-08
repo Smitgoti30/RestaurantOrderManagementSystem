@@ -19,6 +19,12 @@ function Header() {
                 <Link className="nav-link" to={"/contact"}>Contact</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to={"/customer"}>Customer</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/customer/menu"}>Online Menu</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to={"/about"}>About us</Link>
               </li>
               <li className="nav-item">
