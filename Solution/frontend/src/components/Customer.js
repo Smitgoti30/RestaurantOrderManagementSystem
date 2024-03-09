@@ -1,13 +1,13 @@
 
 import React, { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
-import { ADD_CUSTOMER } from "../graphql/Mutations";
+import { CREATE_CUSTOMER } from "../graphql/Mutations";
 import { GET_ALL_CUSTOMERS } from "../graphql/Queries";
 import { Link } from "react-router-dom";
 
 function Customer() {
   const { loading, error, data } = useQuery(GET_ALL_CUSTOMERS);
-  const [addCustomer] = useMutation(ADD_CUSTOMER);
+  const [addCustomer] = useMutation(CREATE_CUSTOMER);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -22,7 +22,13 @@ function Customer() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await addCustomer({ variables: { customerInput: formData } });
+      debugger;
+      const submitData = {
+        ...formData,
+        type: "dining",
+        phone: parseInt(formData.phone, 10)
+    };
+    await addCustomer({ variables: { customerInput: submitData } });
       setFormData({
         firstName: "",
         lastName: "",
@@ -52,7 +58,7 @@ function Customer() {
               type="text"
               name="firstName"
               id="firstName"
-              placeholder="Enter Your First Name"
+              placeholder="Enter First Name"
               value={formData.firstName}
               onChange={handleChange}
               required
@@ -65,7 +71,7 @@ function Customer() {
               type="text"
               name="lastName"
               id="lastName"
-              placeholder="Enter Your Last Name"
+              placeholder="Enter Last Name"
               value={formData.lastName}
               onChange={handleChange}
               required
@@ -78,7 +84,7 @@ function Customer() {
               type="email"
               name="email"
               id="email"
-              placeholder="Enter Your Email Address"
+              placeholder="Enter Email Address"
               value={formData.email}
               onChange={handleChange}
               required
@@ -91,7 +97,7 @@ function Customer() {
               type="tel"
               name="phone"
               id="phone"
-              placeholder="Enter Your Phone Number"
+              placeholder="Enter Phone Number"
               value={formData.phone}
               onChange={handleChange}
               required
@@ -287,7 +293,6 @@ function Customer() {
                               Complete
                             </button>
                           </td>
-                          
                         </tr>
                     </tbody>
                   )}

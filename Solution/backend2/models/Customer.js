@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const uri =
-  "mongodb+srv://dpampatel:Conestoga@cluster0.rhp25qd.mongodb.net/ROMS?retryWrites=true&w=majority";
+  "mongodb+srv://smitgoti2103:Smit@cluster0.ztqnnsj.mongodb.net/RestaurantOrder?retryWrites=true&w=majority&appName=Cluster0";
 mongoose
   .connect(uri, {
     useNewUrlParser: true,
@@ -23,10 +23,10 @@ const customerSchema = mongoose.Schema({
   lastName: { type: String },
   phone: { type: Number },
   email: { type: String, required: true },
-  type: { type: String, required: true }, // online // dining
-  password: { type: String, required: true },
+  type: { type: String, required: true, default: "online" }, // online // dining
+  password: { type: String },
 });
 
-const Customer = mongoose.model("employee", customerSchema);
+const Customer = mongoose.model("customer", customerSchema);
 
 export default Customer;

@@ -8,6 +8,7 @@ export const GET_ALL_CUSTOMERS = gql`
       lastName
       email
       phone
+      password
     }
   }
 `;
