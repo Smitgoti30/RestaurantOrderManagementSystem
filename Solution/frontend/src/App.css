@@ -688,7 +688,13 @@ p {
 .content-scroll::-webkit-scrollbar {
   display: none;
 }
-
+.menu-admin-class .btn-menu {
+  border: none;
+  background: transparent;
+}
+.menu-admin-class caption {
+  text-align: right;
+}
 .menu {
   position: relative;
 }
@@ -1150,7 +1156,7 @@ input[type="password"] {
 
 .total-amount {
   font-size: 20px;
-  color: #EF8354;
+  color: #ef4444 !important;
   text-align: right;
   font-weight: 600;
 }

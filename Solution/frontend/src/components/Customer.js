@@ -148,7 +148,7 @@ function Customer() {
                 <table className="table table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th>Customer #</th>
+                      <th>#</th>
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>Email</th>
@@ -299,17 +299,42 @@ function Customer() {
                         <tr key={customer._id}>
                           <td>
                             <Link to={`/customer/${customer._id}`}>
-                              <u>{customer._id}</u>
+                              <u>
+                                {customer?._id?.substring(
+                                  customer?._id?.length - 3,
+                                  customer?._id?.length
+                                )}
+                              </u>
                             </Link>
                           </td>
                           <td>{customer.firstName}</td>
                           <td>{customer.lastName}</td>
                           <td>{customer.email}</td>
                           <td>{customer.phone}</td>
-                          <td>{customer.latestOrder?._id || "N/A"}</td>
-                          <td>{customer.latestOrder?.table_number || "N/A"}</td>
-                          <td>{customer.latestOrder?.status || "N/A"}</td>
-                          {/* additional cells for actions */}
+                          <td>{customer.latestOrder?._id || "-"}</td>
+                          <td>{customer.latestOrder?.table_number || "-"}</td>
+                          <td>{customer.latestOrder?.status || "-"}</td>
+                          {true && (
+                            <td>
+                              <button className="btn btn-success btn-sm">
+                                Activate
+                              </button>
+                            </td>
+                          )}
+                          {false && customer.firstName !== "Deepam" && (
+                            <>
+                              <td>
+                                <button className="btn btn-primary btn-sm">
+                                  Reorder
+                                </button>
+                              </td>
+                              <td>
+                                <button className="btn btn-danger btn-sm">
+                                  Complete
+                                </button>
+                              </td>
+                            </>
+                          )}
                         </tr>
                       ))}
                     </tbody>
