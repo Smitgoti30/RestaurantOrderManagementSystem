@@ -20,9 +20,9 @@ const CategoryAdmin = () => {
   const handleClose = () => {
     setShow(false);
   };
-  const handleCloseUpdate=()=>{
-    setShowUpdate(false)
-  }
+  const handleCloseUpdate = () => {
+    setShowUpdate(false);
+  };
   const handleCloseStatus = () => {
     setShowStatus(false);
   };
@@ -57,17 +57,20 @@ const CategoryAdmin = () => {
     setShowStatus(true);
   };
   return (
-    <div>
-      <h1 className="m-4">Menu Category</h1>
-      <button className="btn btn-red" onClick={handleShow}>
-        Add Category
-      </button>
-      <AddCategoryModal
-        show={show}
-        handleClose={handleClose}
-        setCategory={(updatedData) => setCategories(updatedData)}
-      />
+    <div className="menu-admin-class">
+      <h1 className="m-4">Item Category</h1>
+
       <table className="table table-striped">
+        <caption>
+          <AddCategoryModal
+            show={show}
+            handleClose={handleClose}
+            setCategory={(updatedData) => setCategories(updatedData)}
+          />
+          <button className="btn btn-red" onClick={handleShow}>
+            Add Category
+          </button>
+        </caption>
         <thead>
           <tr>
             <th>Category Name</th>
@@ -93,8 +96,11 @@ const CategoryAdmin = () => {
                 </span>
               </td>
               <td>
-                <button onClick={() => handleShowUpdate(category._id)}>
-                  <FontAwesomeIcon icon={faPencil} size="lg" color="red" />
+                <button
+                  className="btn-menu"
+                  onClick={() => handleShowUpdate(category._id)}
+                >
+                  <FontAwesomeIcon icon={faPencil} size="lg" color="green" />
                 </button>
               </td>
             </tr>

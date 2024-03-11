@@ -1,36 +1,33 @@
 import { gql } from "@apollo/client";
 
-export const GET_ALL_EMPLOYEES = gql`
-	query GetAllEmployees($filters: employee_data) {
-		getAllEmployees(filters: $filters) {
-			_id
-			age
-			currentStatus
-			dateOfJoining
-			department
-			employeeType
-			lastName
-			firstName
-			title
-			retire
-			remaining
-		}
-	}
+export const GET_ALL_CUSTOMERS = gql`
+  query GetAllCustomers {
+    getAllCustomers {
+      _id
+      firstName
+      lastName
+      email
+      phone
+      password
+    }
+  }
 `;
-export const GET_EMPLOYEE_DETAILS = gql`
-	query GetEmployee($employee_id: ID!) {
-		getEmployeeById(user_id: $employee_id) {
-			_id
-			firstName
-			lastName
-			age
-			dateOfJoining
-			title
-			department
-			employeeType
-			currentStatus
-			retire
-			remaining
-		}
-	}
+
+export const GET_ALL_CUSTOMERS_WITH_LATEST_ORDER = gql`
+  query GetAllCustomersWithLatestOrder {
+    getAllCustomersWithLatestOrder {
+      _id
+      firstName
+      lastName
+      email
+      phone
+      latestOrder {
+        _id
+        date_time
+        status
+        type
+        table_number
+      }
+    }
+  }
 `;

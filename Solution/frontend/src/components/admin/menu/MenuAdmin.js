@@ -51,12 +51,11 @@ function MenuAdmin() {
     }, {})
   );
 
-
   // const uniqueCategories = [...new Set(menu.map((item) => item.category_name))];
 
-  const handleShowUpdate = async ( id) => {
+  const handleShowUpdate = async (id) => {
     try {
-      const data = await getMenuItem( id);
+      const data = await getMenuItem(id);
       setItem(data);
       console.log(data);
     } catch (error) {
@@ -66,77 +65,70 @@ function MenuAdmin() {
   };
 
   const handleShowDelete = async (id) => {
-    setItem(id)
+    setItem(id);
     setShowDelete(true);
   };
 
   return (
     <>
-      <div className="container">
+      <div className="container menu-admin-class">
         <CategoryAdmin />
-        <h1 className="m-4">Menu Item</h1>
-        <button className="btn btn-red" onClick={handleShow}>
-          Add Item
-        </button>
-        <hr/>
-        <AddItemModal
-          show={show}
-          handleClose={handleClose}
-          setMenu={(updatedData) => setMenu(updatedData)}
-        />
+        <h1 className="m-4">Items</h1>
 
-        {uniqueCategories.map((category,index) => (
-          <div key={index}>
-            <h3 className="text-center">{category.category_name}</h3>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Image</th>
-                  <th>Price</th>
-                  <th>Action</th>
+        <table className="table table-striped">
+          <caption>
+            <button className="btn btn-red" onClick={handleShow}>
+              Add Item
+            </button>
+
+            <AddItemModal
+              show={show}
+              handleClose={handleClose}
+              setMenu={(updatedData) => setMenu(updatedData)}
+            />
+          </caption>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {uniqueCategories.map((category, category_index) =>
+              category.items.map((item, index) => (
+                <tr key={category_index + index}>
+                  <td>{item.name}</td>
+                  <td>{item.description}</td>
+                  <td>{category.category_name}</td>
+                  <td>{item.image}</td>
+                  <td>{item.price}</td>
+                  <td>
+                    <button
+                      className="btn-menu"
+                      onClick={() => handleShowUpdate(item._id)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faPencil}
+                        size="lg"
+                        color="green"
+                      />
+                    </button>
+                    <button
+                      className="ms-1 btn-menu"
+                      onClick={() => handleShowDelete(item._id)}
+                    >
+                      <FontAwesomeIcon icon={faTrash} size="lg" color="red" />
+                    </button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {category.items
-                  .map((item, index) => (
-                    <tr key={index}>
-                      <td>{item.name}</td>
-                      <td>{item.description}</td>
-                      <td>{item.image}</td>
-                      <td>{item.price}</td>
-                      <td>
-                        <button
-                          onClick={() =>
-                            handleShowUpdate( item._id)
-                          }
-                        >
-                          <FontAwesomeIcon
-                            icon={faPencil}
-                            size="lg"
-                            color="green"
-                          />
-                        </button>
-                        <button
-                          className="ms-1"
-                          onClick={() =>
-                            handleShowDelete(item._id)
-                          }
-                        >
-                          <FontAwesomeIcon
-                            icon={faTrash}
-                            size="lg"
-                            color="red"
-                          />
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
-          </div>
-        ))}
+              ))
+            )}
+          </tbody>
+        </table>
       </div>
       <UpdateItemModal
         show={showUpdate}
