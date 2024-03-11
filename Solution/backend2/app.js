@@ -7,6 +7,19 @@ import Order from "./models/Order.js";
 import OrderedItems from "./models/OrderedItems.js";
 import Receipt from "./models/Receipt.js";
 
+import bcrypt from "bcrypt";
+
+// Hash password
+const hashPassword = async (password) => {
+  const saltRounds = 10;
+  return await bcrypt.hash(password, saltRounds);
+};
+
+// Verify password
+const verifyPassword = async (password, hashedPassword) => {
+  return await bcrypt.compare(password, hashedPassword);
+};
+
 // Writing Schema in typeDefs
 const typeDefs = `
 scalar Date
@@ -52,9 +65,14 @@ input Customer_filters {
   type: String
   tableNumber: Int
 }
+type AuthPayload {
+  token: String!
+  customer: Customer!
+}
 
 
 type Query {
+  getCustomer(id: ID!): Customer
   getAllCustomers(filters:customer_data): [Customer]
   getAllCustomersWithLatestOrder(filters: Customer_filters): [Customer]
 }
@@ -68,6 +86,9 @@ type Mutation {
 
 const resolvers = {
   Query: {
+    getCustomer: async (_, { id }) => {
+      return await Customer.findById(id);
+    },
     getAllCustomers: async (parent, args, context, info) => {
       try {
         return await Customer.find({});
@@ -122,10 +143,29 @@ const resolvers = {
   },
   Mutation: {
     createCustomer: async (parent, args, context, info) => {
-      console.log(args);
-      const user = new Customer({
-        ...args.customer_details,
-      });
+      if (args.type == "dining") {
+        const user = new Customer({
+          ...args.customer_details,
+        });
+        return user;
+      } else {
+        // Check if the user already exists based on the email
+        const existingCustomer = await Customer.findOne({
+          email: args.customer_details.email,
+        });
+        if (existingCustomer) {
+          throw new Error("Customer already exists");
+        }
+
+        const hashedPassword = await hashPassword(
+          args.customer_details.password
+        );
+
+        const user = new Customer({
+          ...args.customer_details,
+          password: hashedPassword,
+        });
+      }
       await user.save();
       return user;
     },
