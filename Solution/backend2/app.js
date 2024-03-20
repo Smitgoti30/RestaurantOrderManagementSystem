@@ -143,31 +143,36 @@ const resolvers = {
   },
   Mutation: {
     createCustomer: async (parent, args, context, info) => {
-      if (args.type == "dining") {
-        const user = new Customer({
-          ...args.customer_details,
-        });
-        return user;
-      } else {
-        // Check if the user already exists based on the email
-        const existingCustomer = await Customer.findOne({
-          email: args.customer_details.email,
-        });
-        if (existingCustomer) {
-          throw new Error("Customer already exists");
+      try {
+        let user;
+        if (args.type == "dining") {
+          const user = new Customer({
+            ...args.customer_details,
+          });
+          return user;
+        } else {
+          // Check if the user already exists based on the email
+          const existingCustomer = await Customer.findOne({
+            email: args.customer_details.email,
+          });
+          if (existingCustomer) {
+            throw new Error("Customer already exists");
+          }
+
+          const hashedPassword = await hashPassword(
+            args.customer_details.password
+          );
+          console.log(hashedPassword);
+          user = new Customer({
+            ...args.customer_details,
+            password: hashedPassword,
+          });
         }
-
-        const hashedPassword = await hashPassword(
-          args.customer_details.password
-        );
-
-        const user = new Customer({
-          ...args.customer_details,
-          password: hashedPassword,
-        });
+        await user.save();
+        return user;
+      } catch (e) {
+        console.log(e);
       }
-      await user.save();
-      return user;
     },
     deleteCustomer: async (parent, args, context, info) => {
       try {
