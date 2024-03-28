@@ -1,13 +1,13 @@
-const mongoose = require("mongoose")
-const password = encodeURIComponent('Smit');
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 const dbConnect = async () => {
-    try {
-        await mongoose.connect(`mongodb+srv://smitgoti2103:${process.env.MONGO_KEY}@cluster0.ztqnnsj.mongodb.net/RestaurantOrder`)
-    } catch (e) {
-        console.log(e);
-    }
-
-}
-
-module.exports = dbConnect;
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+  }
+};
+export default dbConnect;

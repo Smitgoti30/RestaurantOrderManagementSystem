@@ -32,7 +32,7 @@ const Cart = () => {
       .toFixed(2);
 
   return (
-    <div className="cart">
+    <div className="cart additional">
       <h2>Cart</h2>
       <div className="cart-items">
         {cartItems.length > 0 ? (
