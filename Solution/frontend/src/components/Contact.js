@@ -1,25 +1,4 @@
 import React, { useState } from "react";
-import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
-
-const form = useRef();
-
-const sendEmail = (e) => {
-  e.preventDefault();
-
-  emailjs
-    .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, {
-      publicKey: "YOUR_PUBLIC_KEY",
-    })
-    .then(
-      () => {
-        console.log("SUCCESS!");
-      },
-      (error) => {
-        console.log("FAILED...", error.text);
-      }
-    );
-};
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -47,7 +26,7 @@ function Contact() {
       <div className="col-4"></div>
       <form
         className="col-4 m-3 p-4 contact-us text-center"
-        onSubmit={sendEmail}
+        onSubmit={handleSubmit}
       >
         <div>
           <label>Your Name*:</label>
@@ -55,7 +34,7 @@ function Contact() {
             type="text"
             name="name"
             value={formData.name}
-            onChange={sendEmail}
+            onChange={handleChange}
             required
           />
         </div>
@@ -66,7 +45,7 @@ function Contact() {
             type="email"
             name="email"
             value={formData.email}
-            onChange={sendEmail}
+            onChange={handleChange}
             required
           />
         </div>
@@ -76,12 +55,12 @@ function Contact() {
           <textarea
             name="message"
             value={formData.message}
-            onChange={sendEmail}
+            onChange={handleChange}
             required
           ></textarea>
         </div>
         <br />
-        <button className="btn btn-red" type="submit" value="Send">
+        <button className="btn btn-red" type="submit">
           Send
         </button>
       </form>
