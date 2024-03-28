@@ -20,13 +20,16 @@ function Contact() {
   return (
     <div className="row">
       <h1>Contact Us</h1>
-      <p className="text-center">Get in touch with us! We'd love to hear from you.</p>
+      <p className="text-center">
+        Get in touch with us! We'd love to hear from you.
+      </p>
       <div className="col-4"></div>
-      <form className="col-4 m-3 p-4 contact-us text-center" onSubmit={handleSubmit}>
+      <form
+        className="col-4 m-3 p-4 contact-us text-center"
+        onSubmit={handleSubmit}
+      >
         <div>
-          <label>
-            Your Name*:
-          </label>
+          <label>Your Name*:</label>
           <input
             type="text"
             name="name"
@@ -37,9 +40,7 @@ function Contact() {
         </div>
         <br />
         <div>
-          <label>
-            Your Email Address*:
-          </label>
+          <label>Your Email Address*:</label>
           <input
             type="email"
             name="email"
@@ -50,9 +51,7 @@ function Contact() {
         </div>
         <br />
         <div>
-          <label>
-            Your Message*:
-          </label>
+          <label>Your Message*:</label>
           <textarea
             name="message"
             value={formData.message}
@@ -61,7 +60,9 @@ function Contact() {
           ></textarea>
         </div>
         <br />
-        <button className="btn btn-red" type="submit">Send</button>
+        <button className="btn btn-red" type="submit">
+          Send
+        </button>
       </form>
     </div>
   );

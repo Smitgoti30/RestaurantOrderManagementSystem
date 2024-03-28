@@ -73,6 +73,8 @@ const Login = (props) => {
                         type="text"
                         name="email"
                         placeholder="email"
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                       />
@@ -83,6 +85,9 @@ const Login = (props) => {
                         type="password"
                         name="password"
                         placeholder="password"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                        title="Password must be at least 8 characters long and contain at least one letter and one number"
+                        required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                       />
@@ -127,6 +132,8 @@ const Login = (props) => {
                       type="text"
                       name="email"
                       placeholder="email"
+                      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                      required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -137,6 +144,9 @@ const Login = (props) => {
                       type="password"
                       name="password"
                       placeholder="password"
+                      pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                      title="Password must be at least 8 characters long and contain at least one letter and one number"
+                      required
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
