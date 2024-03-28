@@ -21,14 +21,32 @@ export const DELETE_CUSTOMER = gql`
   }
 `;
 
+export const CREATE_ORDER = gql`
+  mutation CreateOrder($order: OrderInput, $items: [OrderItemInput]) {
+    createOrder(order: $order, items: $items) {
+      _id
+      status
+      type
+      table_number
+    }
+  }
+`;
+
+export const COMPLETE_ORDER = gql`
+  mutation CompleteOrder($orderId: ID!) {
+    completeOrder(orderId: $orderId) {
+      receiptId
+    }
+  }
+`;
+
 export const UPDATE_CUSTOMER = gql`
-  mutation Mutation($customer_id: ID!, $customer_details: customer_data) {
-    updateCustomer(
-      customer_id: $customer_id
-      customer_details: $customer_details
-    ) {
+  mutation UpdateCustomer($customerId: ID!, $customerDetails: customer_data!) {
+    updateCustomer(customerId: $customerId, customerDetails: $customerDetails) {
+      _id
       firstName
       lastName
+      email
       phone
     }
   }
