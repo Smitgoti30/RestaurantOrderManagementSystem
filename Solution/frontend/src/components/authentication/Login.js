@@ -7,7 +7,7 @@ import { useAuth } from "./AuthContext";
 import { toast } from "react-toastify";
 import loginImg from "../../login.svg";
 
-const Login = () => {
+const Login = ({ onForgotPassword }) => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -88,9 +88,13 @@ const Login = () => {
             />
           </div>
           <div style={{ paddingBottom: "18px", textAlign: "center" }}>
-            <Link to="/forget-password">
-              <u>Forget Password</u>
-            </Link>
+            <div
+              onClick={onForgotPassword}
+              className="forget-password-link"
+              style={{ cursor: "pointer", textDecoration: "underline" }}
+            >
+              Forget Password
+            </div>
           </div>
           <div className="footer d-flex justify-content-center">
             <button type="submit" className="btn btn-outline-primary btn-sm">

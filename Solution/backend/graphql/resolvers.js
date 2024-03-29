@@ -9,7 +9,8 @@ import OrderedItems from "../models/OrderedItems.js";
 import Receipt from "../models/Receipt.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret_here";
+import sendEmail from "../utils/email.js";
+const JWT_SECRET = process.env.JWT_SECRET || "jwt_secret_code";
 
 // Hash password
 const hashPassword = async (password) => {
@@ -264,6 +265,84 @@ const resolvers = {
           type: customer.type,
         },
       };
+    },
+    verifyEmail: async (_, { email }) => {
+      const customer = await Customer.findOne({ email });
+      if (!customer) {
+        throw new Error("Email not found.");
+      }
+
+      const verificationCode = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit code
+      try {
+        const emailOptions = {
+          to: email,
+          subject: "Your Password Reset Code",
+          text: `Your password reset verification code is: ${verificationCode}`,
+          html: `
+            <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 20px; color: #333; line-height: 1.6;">
+              <h2 style="color: #007bff;">Password Reset Request</h2>
+              <p>Hello,</p>
+              <p>We received a request to reset the password for your account. Please use the following verification code to proceed with resetting your password:</p>
+              <div style="margin: 20px 0; padding: 15px; border-radius: 5px; background-color: #e9ecef; border-left: 6px solid #007bff; font-size: 20px; letter-spacing: 1px;">
+                <code style="font-size: 24px; font-weight: bold;">${verificationCode}</code>
+              </div>
+              <p>If you did not request a password reset, please ignore this email or contact our support team for assistance.</p>
+              <hr>
+              <p>Thank you,<br><br>ROMS</p>
+            </div>
+          `,
+        };
+
+        await sendEmail(emailOptions);
+        await Customer.updateOne({ email }, { $set: { verificationCode } });
+      } catch (error) {
+        console.log(error);
+        throw new Error("Please try after sometime.");
+      }
+      return {
+        success: true,
+        message: "Verification code sent to your email.",
+      };
+    },
+    resetPassword: async (_, { email, verificationCode, newPassword }) => {
+      const customer = await Customer.findOne({ email });
+
+      if (!customer || customer.verificationCode !== verificationCode) {
+        throw new Error("Invalid verification code.");
+      }
+
+      const hashedPassword = await hashPassword(newPassword);
+      await Customer.updateOne(
+        { email },
+        { $set: { password: hashedPassword, verificationCode: null } }
+      );
+      try {
+        const emailOptions = {
+          to: email,
+          subject: "Password Reset Successful",
+          text: `Your password has been successfully reset. If you did not initiate this change or if you encounter any issues with logging in, please contact our support team immediately.`,
+          html: `
+            <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 20px; color: #333; line-height: 1.6;">
+              <h2 style="color: #28a745;">Password Reset Successful</h2>
+              <p>Hello,</p>
+              <p>Your password has been successfully reset. You can now use your new password to log in to your account.</p>
+              <p>If you did not request this change or if you encounter any issues with logging in, please immediately contact our support team.</p>
+              <p style="margin-top: 20px;">
+                <a href="http://localhost:3000/auth" style="background-color: #28a745; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Log In Now</a>
+              </p>
+              <hr>
+              <p>Thank you,<br>ROMS</p>
+            </div>
+          `,
+        };
+
+        await sendEmail(emailOptions);
+      } catch (error) {
+        console.log(error);
+        throw new Error("Please try after sometime.");
+      }
+
+      return { success: true };
     },
     deleteCustomer: async (parent, args, context, info) => {
       try {

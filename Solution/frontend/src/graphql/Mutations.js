@@ -27,7 +27,30 @@ export const LOGIN = gql`
     }
   }
 `;
+export const VERIFY_EMAIL = gql`
+  mutation verifyEmail($email: String!) {
+    verifyEmail(email: $email) {
+      success
+      message
+    }
+  }
+`;
 
+export const RESET_PASSWORD = gql`
+  mutation resetPassword(
+    $email: String!
+    $verificationCode: String!
+    $newPassword: String!
+  ) {
+    resetPassword(
+      email: $email
+      verificationCode: $verificationCode
+      newPassword: $newPassword
+    ) {
+      success
+    }
+  }
+`;
 export const DELETE_CUSTOMER = gql`
   mutation DeleteCustomer($customer_id: ID!) {
     deleteCustomer(customer_id: $customer_id) {

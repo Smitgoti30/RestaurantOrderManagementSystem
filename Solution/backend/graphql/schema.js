@@ -126,6 +126,15 @@ const typeDefs = `
     image: String!
     category_name: String!
   }
+  type MessageResponse {
+    success: Boolean!
+    message: String!
+  }
+  
+  type SuccessResponse {
+    success: Boolean!
+  }
+
   type Query {
     getCustomer(id: ID!): Customer
     getAllCustomers(filters:customer_data): [Customer]
@@ -146,6 +155,9 @@ const typeDefs = `
   type Mutation {
     login(email: String!, password: String!): AuthPayload
     createCustomer(customer_details: customer_data): Customer
+    verifyEmail(email: String!): MessageResponse!
+    resetPassword(email: String!, verificationCode: String!, newPassword: String!): SuccessResponse!
+
     deleteCustomer(customer_id: ID!): Customer
     completeOrder(orderId: ID!): CompleteOrderResponse
     updateCustomer(customerId: ID!, customerDetails: customer_data!): Customer

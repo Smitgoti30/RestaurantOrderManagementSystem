@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
+import ForgotPassword from "./ForgotPassword";
 
 function Authentication() {
-  const [isLoginView, setIsLoginView] = useState(true);
+  const [view, setView] = useState("login"); // 'login', 'register', or 'forgotPassword'
 
-  const toggleView = () => setIsLoginView(!isLoginView);
+  const toggleView = () => {
+    if (view === "login") {
+      setView("register");
+    } else if (view === "register" || view === "forgotPassword") {
+      setView("login");
+    }
+  };
+
+  const showForgotPassword = () => setView("forgotPassword");
 
   return (
     <div className="authentication-container">
       <div className="login-register-container">
         <div className="container">
-          {isLoginView ? <Login /> : <Register />}
+          {view === "login" && <Login onForgotPassword={showForgotPassword} />}
+          {view === "register" && <Register />}
+          {view === "forgotPassword" && <ForgotPassword />}
           <div className="overlay-container" onClick={toggleView}>
             <div className="overlay">
               <div className="overlay-panel overlay-right">
-                <h1>{isLoginView ? "Register" : "Login"}</h1>
+                <h1>{view === "login" ? "Register" : "Login"}</h1>
                 <p>
-                  {isLoginView
+                  {view === "login"
                     ? "Enter your personal details and start your journey with us"
                     : "To keep connected with us please login with your personal info"}
                 </p>
