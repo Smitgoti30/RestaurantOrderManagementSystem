@@ -47,7 +47,9 @@ function Header() {
               {renderNavLink(
                 "/menu",
                 "Menu",
-                user && user.type === "staff" ? [] : ["public"]
+                user && (user.type === "staff" || user.type === "admin")
+                  ? []
+                  : ["public"]
               )}
 
               {/* {renderNavLink("/about", "About Us", ["public"])}
