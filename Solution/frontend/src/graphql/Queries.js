@@ -12,6 +12,7 @@ export const GET_ALL_CUSTOMERS = gql`
     }
   }
 `;
+
 export const GET_CUSTOMER_DETAILS = gql`
   query GetCustomer($id: ID!) {
     getCustomer(id: $id) {

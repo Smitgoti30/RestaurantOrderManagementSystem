@@ -8,16 +8,13 @@ import Order from "../models/Order.js";
 import OrderedItems from "../models/OrderedItems.js";
 import Receipt from "../models/Receipt.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret_here";
 
 // Hash password
 const hashPassword = async (password) => {
   const saltRounds = 10;
   return await bcrypt.hash(password, saltRounds);
-};
-
-// Verify password
-const verifyPassword = async (password, hashedPassword) => {
-  return await bcrypt.compare(password, hashedPassword);
 };
 
 const resolvers = {
@@ -169,7 +166,7 @@ const resolvers = {
         const categories = await Category.find();
         return categories;
       } catch (error) {
-        throw new Error('Error fetching categories');
+        throw new Error("Error fetching categories");
       }
     },
     getCategory: async (_, { id }) => {
@@ -177,7 +174,7 @@ const resolvers = {
         const category = await Category.findById(id);
         return category;
       } catch (error) {
-        throw new Error('Error fetching category');
+        throw new Error("Error fetching category");
       }
     },
     getAllMenus: async () => {
@@ -185,7 +182,7 @@ const resolvers = {
         const menus = await Menu.find();
         return menus;
       } catch (error) {
-        throw new Error('Error fetching menus');
+        throw new Error("Error fetching menus");
       }
     },
     getMenuItem: async (_, { id }) => {
@@ -193,7 +190,7 @@ const resolvers = {
         const menuItem = await Menu.findById(id);
         return menuItem;
       } catch (error) {
-        throw new Error('Error fetching menu item');
+        throw new Error("Error fetching menu item");
       }
     },
   },
@@ -211,9 +208,12 @@ const resolvers = {
           // Check if the user already exists based on the email
           const existingCustomer = await Customer.findOne({
             email: args.customer_details.email,
+            type: { $ne: "dining" },
           });
           if (existingCustomer) {
-            throw new Error("Customer already exists");
+            throw new Error(
+              `${args.customer_details.email} already registered, please login.`
+            );
           }
 
           const hashedPassword = await hashPassword(
@@ -222,6 +222,7 @@ const resolvers = {
 
           user = new Customer({
             ...args.customer_details,
+            // type: "staff" or "admin",
             password: hashedPassword,
           });
           await user.save();
@@ -229,8 +230,40 @@ const resolvers = {
         return user;
       } catch (error) {
         console.log(error);
-        throw new Error(`Create Customer failed: ${error.message}`);
+        throw new Error(error.message);
       }
+    },
+    login: async (_, { email, password }) => {
+      const customer = await Customer.findOne({
+        email,
+        type: { $ne: "dining" },
+      });
+      if (!customer) {
+        throw new Error("User not found");
+      }
+
+      const valid = await bcrypt.compare(password, customer.password);
+      if (!valid) {
+        throw new Error("Invalid password");
+      }
+
+      const token = jwt.sign(
+        { email: customer.email, id: customer._id },
+        JWT_SECRET,
+        { expiresIn: "1d" }
+      );
+
+      return {
+        token,
+        customer: {
+          _id: customer._id,
+          firstName: customer.firstName,
+          lastName: customer.lastName,
+          email: customer.email,
+          phone: customer.phone,
+          type: customer.type,
+        },
+      };
     },
     deleteCustomer: async (parent, args, context, info) => {
       try {
@@ -388,7 +421,7 @@ const resolvers = {
         await category.save();
         return category;
       } catch (error) {
-        throw new Error('Error adding category');
+        throw new Error("Error adding category");
       }
     },
     updateCategory: async (_, { id, category_name, description }) => {
@@ -400,31 +433,40 @@ const resolvers = {
         );
         return updatedCategory;
       } catch (error) {
-        throw new Error('Error updating category');
+        throw new Error("Error updating category");
       }
     },
     updateCategoryStatus: async (_, { id, status }) => {
       try {
         const updatedCategoryStatus = await Category.updateOne(
           { _id: id },
-      { $set: { status } },
-      { new: true }
+          { $set: { status } },
+          { new: true }
         );
         return updatedCategoryStatus;
       } catch (error) {
-        throw new Error('Error updating category status');
+        throw new Error("Error updating category status");
       }
     },
     addMenu: async (_, { name, description, price, image, category_name }) => {
       try {
-        const menu = new Menu({ name, description, price, image, category_name });
+        const menu = new Menu({
+          name,
+          description,
+          price,
+          image,
+          category_name,
+        });
         await menu.save();
         return menu;
       } catch (error) {
-        throw new Error('Error adding menu');
+        throw new Error("Error adding menu");
       }
     },
-    updateMenuItem: async (_, { id, name, description, price, image, category_name }) => {
+    updateMenuItem: async (
+      _,
+      { id, name, description, price, image, category_name }
+    ) => {
       try {
         const updatedMenuItem = await Menu.findByIdAndUpdate(
           id,
@@ -433,7 +475,7 @@ const resolvers = {
         );
         return updatedMenuItem;
       } catch (error) {
-        throw new Error('Error updating menu item');
+        throw new Error("Error updating menu item");
       }
     },
     deleteMenuItem: async (_, { id }) => {
@@ -441,7 +483,7 @@ const resolvers = {
         const deletedMenuItem = await Menu.findByIdAndDelete(id);
         return deletedMenuItem;
       } catch (error) {
-        throw new Error('Error deleting menu item');
+        throw new Error("Error deleting menu item");
       }
     },
     fileUpload: async (_, { file }) => {
@@ -451,7 +493,7 @@ const resolvers = {
         const result = await cloudinary.uploadStream(stream);
         return result.secure_url;
       } catch (error) {
-        throw new Error('Error uploading file');
+        throw new Error("Error uploading file");
       }
     },
   },

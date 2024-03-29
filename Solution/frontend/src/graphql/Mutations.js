@@ -13,6 +13,21 @@ export const CREATE_CUSTOMER = gql`
   }
 `;
 
+export const LOGIN = gql`
+  mutation Login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      customer {
+        _id
+        firstName
+        lastName
+        email
+        type
+      }
+    }
+  }
+`;
+
 export const DELETE_CUSTOMER = gql`
   mutation DeleteCustomer($customer_id: ID!) {
     deleteCustomer(customer_id: $customer_id) {
