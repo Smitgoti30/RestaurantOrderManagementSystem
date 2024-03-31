@@ -3,7 +3,7 @@ import { Button, Modal } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const CustomModal = ({ show, handleClose, data }) => {
+const CustomModal = ({ show, handleClose, data, handleAddToCart }) => {
     const [quantity, setQuantity] = useState(1);
 
     const handleIncrement = () => {
@@ -46,9 +46,10 @@ const CustomModal = ({ show, handleClose, data }) => {
                         </button>
                     </div>
                     <div>
-                        <Button className='btn-red' onClick={() => handlePlaceOrder()}>
-                            Total Price - ${totalPrice}
+                        <Button className='btn-red' onClick={() => handleAddToCart(data)}>
+                            Add to Cart
                         </Button>
+                        <p>Total Price - ${totalPrice}</p>
                     </div>
                 </div>
             </Modal.Footer>
@@ -57,3 +58,4 @@ const CustomModal = ({ show, handleClose, data }) => {
 }
 
 export default CustomModal;
+    
