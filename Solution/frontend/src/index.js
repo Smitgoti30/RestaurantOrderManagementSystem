@@ -11,6 +11,7 @@ import {
   gql,
 } from "@apollo/client";
 import "bootstrap/dist/css/bootstrap.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",

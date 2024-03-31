@@ -25,6 +25,7 @@ const customerSchema = mongoose.Schema({
   email: { type: String, required: true },
   type: { type: String, required: true, default: "online" }, // online // dining
   password: { type: String },
+  verificationCode: { type: String },
 });
 
 const Customer = mongoose.model("customer", customerSchema);

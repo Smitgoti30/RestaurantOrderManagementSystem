@@ -1,14 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../authentication/AuthContext";
 
 function Header() {
+  const { user, logout } = useAuth();
+
+  const renderNavLink = (to, label, allowedTypes) => {
+    if (!user && !allowedTypes.includes("public")) return null;
+    if (
+      user &&
+      !allowedTypes.includes(user.type) &&
+      !allowedTypes.includes("public")
+    )
+      return null;
+    return (
+      <li className="nav-item">
+        <Link className="nav-link" to={to}>
+          {label}
+        </Link>
+      </li>
+    );
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             NAVBAR
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,72 +42,31 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
-              <li className="nav-item">
-                <Link className="nav-link" to={"/admin/menu"}>
-                  Menu
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/contact"}>
-                  Contact
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/customer"}>
-                  Customer
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/customer/menu"}>
-                  Online Menu
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/about"}>
-                  About us
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/login"}>
-                  Login
-                </Link>
-              </li>
+              {renderNavLink("/admin/menu", "Menu", ["staff", "admin"])}
+              {renderNavLink("/customer", "Customer", ["staff", "admin"])}
+              {renderNavLink(
+                "/menu",
+                "Menu",
+                user && (user.type === "staff" || user.type === "admin")
+                  ? []
+                  : ["public"]
+              )}
+
+              {/* {renderNavLink("/about", "About Us", ["public"])}
+              {renderNavLink("/contact", "Contact", ["public"])}{" "} */}
+              {user ? (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/" onClick={logout}>
+                    Logout
+                  </Link>
+                </li>
+              ) : (
+                renderNavLink("/auth", "Login", ["public"])
+              )}
             </ul>
           </div>
         </div>
       </nav>
-      {/* <header>
-        <nav>
-          <span className="logo">
-            <Link to="/home">
-              <b className="active">LOGO</b>
-            </Link>
-          </span>
-          <div className="menu-icon">
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
-          <ul className="nav-list">
-            <li>
-              <Link to="/menu_admin">MENU</Link>
-            </li>
-            <li>
-              <Link to="/customer">CUSTOMER</Link>
-            </li>
-            <li>
-              <Link to="/contact">CONTACT</Link>
-            </li>
-            <li>
-              <Link to="/about">ABOUT US</Link>
-            </li>
-            <li>
-              <Link to="/login">LOGIN</Link>
-            </li>
-          </ul>
-        </nav>
-      </header> */}
-      {/* <Outlet /> */}
     </>
   );
 }
