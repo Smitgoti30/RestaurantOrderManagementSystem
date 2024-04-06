@@ -43,6 +43,7 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
               {renderNavLink("/admin/menu", "Menu", ["staff", "admin"])}
+              {renderNavLink("/admin/on/order", "Order", ["staff", "admin"])}
               {renderNavLink("/customer", "Customer", ["staff", "admin"])}
               {renderNavLink(
                 "/menu",
@@ -51,7 +52,8 @@ function Header() {
                   ? []
                   : ["public"]
               )}
-
+              {renderNavLink("/cart", "Cart", ["online"])}
+              {renderNavLink("/checkout", "Checkout", ["online"])}
               {/* {renderNavLink("/about", "About Us", ["public"])}
               {renderNavLink("/contact", "Contact", ["public"])}{" "} */}
               {user ? (

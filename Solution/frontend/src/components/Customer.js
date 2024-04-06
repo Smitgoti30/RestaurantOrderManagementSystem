@@ -56,7 +56,6 @@ function Customer() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      debugger;
       const submitData = {
         ...formData,
         type: "dining",

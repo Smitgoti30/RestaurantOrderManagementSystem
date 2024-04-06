@@ -17,6 +17,7 @@ import Receipt from "./Receipt";
 import CustomerDetails from "./admin/customer/CustomerDetails";
 import CheckoutPage from "./CheckoutPage";
 import Authentication from "./authentication/Authentication";
+import OnlineOrderMgmt from "./admin/customer/OnlineOrderMgmt.js";
 
 function Roms() {
   return (
@@ -38,6 +39,14 @@ function Roms() {
                 element={
                   <ProtectedRoute allowedTypes={["staff", "admin"]}>
                     <Customer />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/on/order"
+                element={
+                  <ProtectedRoute allowedTypes={["staff", "admin"]}>
+                    <OnlineOrderMgmt />
                   </ProtectedRoute>
                 }
               />
