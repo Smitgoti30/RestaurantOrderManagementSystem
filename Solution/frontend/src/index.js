@@ -12,6 +12,7 @@ import {
 } from "@apollo/client";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-toastify/dist/ReactToastify.css";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
@@ -22,7 +23,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <GoogleOAuthProvider clientId="137004130558-hqh14bve50ijjv7njrje7n6m154339nj.apps.googleusercontent.com">
+        <App />
+      </GoogleOAuthProvider>
     </ApolloProvider>
   </React.StrictMode>
 );

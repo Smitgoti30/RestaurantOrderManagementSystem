@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-
 import { LOGIN } from "../../graphql/Mutations.js";
 import { useAuth } from "./AuthContext";
 import { toast } from "react-toastify";
@@ -9,6 +8,7 @@ import loginImg from "../../login.svg";
 
 const Login = ({ onForgotPassword }) => {
   const { login } = useAuth();
+  const [user, setUser] = useState(false);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,6 +37,18 @@ const Login = ({ onForgotPassword }) => {
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
+
+  function handler() {
+    setUser(true);
+    localStorage.setItem("user", "1");
+  }
+
+  useEffect(() => {
+    const users = localStorage.getItem("user");
+    if (users === "1") {
+      setUser(true);
+    }
+  }, [user]);
 
   const handleLogin = (e) => {
     e.preventDefault();
