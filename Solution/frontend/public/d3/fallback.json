@@ -1,0 +1,2265 @@
+[
+    {
+        "id": 1,
+        "data": [
+            {
+                "order_id": "1",
+                "customer": {
+                    "_id": "1",
+                    "name": "Customer 1",
+                    "phone": "123-456-7890",
+                    "email": "customer1@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 5,
+                        "price": 15,
+                        "subTotal": 75,
+                        "tax": 7.5,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 75,
+                "tax_amount": 7.5,
+                "total_amount": 82.5,
+                "date": "2023-10-04T09:01:37.789Z"
+            },
+            {
+                "order_id": "2",
+                "customer": {
+                    "_id": "2",
+                    "name": "Customer 2",
+                    "phone": "123-456-7890",
+                    "email": "customer2@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Mozzarella Sticks",
+                        "quantity": 4,
+                        "price": 20,
+                        "subTotal": 80,
+                        "tax": 8,
+                        "cost": 14,
+                        "category_name": "Appetizers"
+                    },
+                    {
+                        "name": "Chocolate Lava Cake",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 1,
+                        "price": 22,
+                        "subTotal": 22,
+                        "tax": 2.2,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 152,
+                "tax_amount": 15.2,
+                "total_amount": 167.2,
+                "date": "2024-01-26T20:37:49.453Z"
+            },
+            {
+                "order_id": "3",
+                "customer": {
+                    "_id": "3",
+                    "name": "Customer 3",
+                    "phone": "123-456-7890",
+                    "email": "customer3@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chef's Special Burger",
+                        "quantity": 5,
+                        "price": 35,
+                        "subTotal": 175,
+                        "tax": 17.5,
+                        "cost": 24.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 2,
+                        "price": 23,
+                        "subTotal": 46,
+                        "tax": 4.6000000000000005,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 3,
+                        "price": 15,
+                        "subTotal": 45,
+                        "tax": 4.5,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 266,
+                "tax_amount": 26.6,
+                "total_amount": 292.6,
+                "date": "2023-04-23T10:11:55.884Z"
+            },
+            {
+                "order_id": "4",
+                "customer": {
+                    "_id": "4",
+                    "name": "Customer 4",
+                    "phone": "123-456-7890",
+                    "email": "customer4@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 4,
+                        "price": 22,
+                        "subTotal": 88,
+                        "tax": 8.8,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 2,
+                        "price": 37,
+                        "subTotal": 74,
+                        "tax": 7.4,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Chicken Parmesan",
+                        "quantity": 3,
+                        "price": 35,
+                        "subTotal": 105,
+                        "tax": 10.5,
+                        "cost": 24.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Mozzarella Sticks",
+                        "quantity": 5,
+                        "price": 20,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 14,
+                        "category_name": "Appetizers"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 467,
+                "tax_amount": 46.7,
+                "total_amount": 513.7,
+                "date": "2023-06-07T05:17:00.170Z"
+            },
+            {
+                "order_id": "5",
+                "customer": {
+                    "_id": "5",
+                    "name": "Customer 5",
+                    "phone": "123-456-7890",
+                    "email": "customer5@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Mozzarella Sticks",
+                        "quantity": 2,
+                        "price": 20,
+                        "subTotal": 40,
+                        "tax": 4,
+                        "cost": 14,
+                        "category_name": "Appetizers"
+                    },
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 3,
+                        "price": 12,
+                        "subTotal": 36,
+                        "tax": 3.6,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 4,
+                        "price": 37,
+                        "subTotal": 148,
+                        "tax": 14.8,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Seafood Paella",
+                        "quantity": 5,
+                        "price": 45,
+                        "subTotal": 225,
+                        "tax": 22.5,
+                        "cost": 31.5,
+                        "category_name": "Specials"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 549,
+                "tax_amount": 54.9,
+                "total_amount": 603.9,
+                "date": "2024-01-12T18:50:50.620Z"
+            },
+            {
+                "order_id": "6",
+                "customer": {
+                    "_id": "6",
+                    "name": "Customer 6",
+                    "phone": "123-456-7890",
+                    "email": "customer6@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Chicken Caesar Wrap",
+                        "quantity": 3,
+                        "price": 29,
+                        "subTotal": 87,
+                        "tax": 8.700000000000001,
+                        "cost": 20.3,
+                        "category_name": "Wraps"
+                    },
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 5,
+                        "price": 23,
+                        "subTotal": 115,
+                        "tax": 11.5,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 252,
+                "tax_amount": 25.200000000000003,
+                "total_amount": 277.2,
+                "date": "2023-12-31T18:01:20.383Z"
+            },
+            {
+                "order_id": "7",
+                "customer": {
+                    "_id": "7",
+                    "name": "Customer 7",
+                    "phone": "123-456-7890",
+                    "email": "customer7@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chocolate Lava Cake",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Chocolate Lava Cake",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Seafood Paella",
+                        "quantity": 2,
+                        "price": 45,
+                        "subTotal": 90,
+                        "tax": 9,
+                        "cost": 31.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 1,
+                        "price": 37,
+                        "subTotal": 37,
+                        "tax": 3.7,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 277,
+                "tax_amount": 27.7,
+                "total_amount": 304.7,
+                "date": "2023-05-13T04:45:38.079Z"
+            },
+            {
+                "order_id": "8",
+                "customer": {
+                    "_id": "8",
+                    "name": "Customer 8",
+                    "phone": "123-456-7890",
+                    "email": "customer8@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 5,
+                        "price": 3,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 15,
+                "tax_amount": 1.5,
+                "total_amount": 16.5,
+                "date": "2024-03-12T22:35:57.036Z"
+            },
+            {
+                "order_id": "9",
+                "customer": {
+                    "_id": "9",
+                    "name": "Customer 9",
+                    "phone": "123-456-7890",
+                    "email": "customer9@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 5,
+                        "price": 12,
+                        "subTotal": 60,
+                        "tax": 6,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 1,
+                        "price": 23,
+                        "subTotal": 23,
+                        "tax": 2.3000000000000003,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Chocolate Lava Cake",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 1,
+                        "price": 15,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 273,
+                "tax_amount": 27.3,
+                "total_amount": 300.3,
+                "date": "2023-04-16T18:58:02.540Z"
+            },
+            {
+                "order_id": "10",
+                "customer": {
+                    "_id": "10",
+                    "name": "Customer 10",
+                    "phone": "123-456-7890",
+                    "email": "customer10@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 1,
+                        "price": 25,
+                        "subTotal": 25,
+                        "tax": 2.5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 5,
+                        "price": 12,
+                        "subTotal": 60,
+                        "tax": 6,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Chicken Parmesan",
+                        "quantity": 3,
+                        "price": 35,
+                        "subTotal": 105,
+                        "tax": 10.5,
+                        "cost": 24.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 3,
+                        "price": 3,
+                        "subTotal": 9,
+                        "tax": 0.9,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 4,
+                        "price": 37,
+                        "subTotal": 148,
+                        "tax": 14.8,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 347,
+                "tax_amount": 34.7,
+                "total_amount": 381.7,
+                "date": "2024-01-05T15:56:18.189Z"
+            },
+            {
+                "order_id": "11",
+                "customer": {
+                    "_id": "11",
+                    "name": "Customer 11",
+                    "phone": "123-456-7890",
+                    "email": "customer11@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 3,
+                        "price": 23,
+                        "subTotal": 69,
+                        "tax": 6.9,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 69,
+                "tax_amount": 6.9,
+                "total_amount": 75.9,
+                "date": "2024-01-04T01:56:08.986Z"
+            },
+            {
+                "order_id": "12",
+                "customer": {
+                    "_id": "12",
+                    "name": "Customer 12",
+                    "phone": "123-456-7890",
+                    "email": "customer12@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 4,
+                        "price": 12,
+                        "subTotal": 48,
+                        "tax": 4.800000000000001,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Mango Smoothie",
+                        "quantity": 4,
+                        "price": 5,
+                        "subTotal": 20,
+                        "tax": 2,
+                        "cost": 3.5,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 2,
+                        "price": 15,
+                        "subTotal": 30,
+                        "tax": 3,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 98,
+                "tax_amount": 9.8,
+                "total_amount": 107.8,
+                "date": "2023-07-11T21:56:00.585Z"
+            },
+            {
+                "order_id": "13",
+                "customer": {
+                    "_id": "13",
+                    "name": "Customer 13",
+                    "phone": "123-456-7890",
+                    "email": "customer13@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 3,
+                        "price": 3,
+                        "subTotal": 9,
+                        "tax": 0.9,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 5,
+                        "price": 3,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 299,
+                "tax_amount": 29.9,
+                "total_amount": 328.9,
+                "date": "2023-11-16T02:23:52.054Z"
+            },
+            {
+                "order_id": "14",
+                "customer": {
+                    "_id": "14",
+                    "name": "Customer 14",
+                    "phone": "123-456-7890",
+                    "email": "customer14@example.com"
+                },
+                "items": [
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 1,
+                        "price": 37,
+                        "subTotal": 37,
+                        "tax": 3.7,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 37,
+                "tax_amount": 3.7,
+                "total_amount": 40.7,
+                "date": "2023-10-31T23:15:12.018Z"
+            },
+            {
+                "order_id": "15",
+                "customer": {
+                    "_id": "15",
+                    "name": "Customer 15",
+                    "phone": "123-456-7890",
+                    "email": "customer15@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Mango Smoothie",
+                        "quantity": 3,
+                        "price": 5,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 3.5,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 2,
+                        "price": 23,
+                        "subTotal": 46,
+                        "tax": 4.6000000000000005,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 161,
+                "tax_amount": 16.1,
+                "total_amount": 177.1,
+                "date": "2023-12-05T05:55:21.076Z"
+            },
+            {
+                "order_id": "16",
+                "customer": {
+                    "_id": "16",
+                    "name": "Customer 16",
+                    "phone": "123-456-7890",
+                    "email": "customer16@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chicken Parmesan",
+                        "quantity": 3,
+                        "price": 35,
+                        "subTotal": 105,
+                        "tax": 10.5,
+                        "cost": 24.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 3,
+                        "price": 12,
+                        "subTotal": 36,
+                        "tax": 3.6,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 141,
+                "tax_amount": 14.1,
+                "total_amount": 155.1,
+                "date": "2023-10-30T19:09:04.355Z"
+            },
+            {
+                "order_id": "17",
+                "customer": {
+                    "_id": "17",
+                    "name": "Customer 17",
+                    "phone": "123-456-7890",
+                    "email": "customer17@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chicken Parmesan",
+                        "quantity": 4,
+                        "price": 35,
+                        "subTotal": 140,
+                        "tax": 14,
+                        "cost": 24.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 1,
+                        "price": 3,
+                        "subTotal": 3,
+                        "tax": 0.30000000000000004,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 368,
+                "tax_amount": 36.8,
+                "total_amount": 404.8,
+                "date": "2023-12-03T10:28:31.388Z"
+            },
+            {
+                "order_id": "18",
+                "customer": {
+                    "_id": "18",
+                    "name": "Customer 18",
+                    "phone": "123-456-7890",
+                    "email": "customer18@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 5,
+                        "price": 23,
+                        "subTotal": 115,
+                        "tax": 11.5,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 290,
+                "tax_amount": 29,
+                "total_amount": 319,
+                "date": "2023-07-06T23:45:02.661Z"
+            },
+            {
+                "order_id": "19",
+                "customer": {
+                    "_id": "19",
+                    "name": "Customer 19",
+                    "phone": "123-456-7890",
+                    "email": "customer19@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Chicken Caesar Wrap",
+                        "quantity": 3,
+                        "price": 29,
+                        "subTotal": 87,
+                        "tax": 8.700000000000001,
+                        "cost": 20.3,
+                        "category_name": "Wraps"
+                    },
+                    {
+                        "name": "Chef's Special Burger",
+                        "quantity": 5,
+                        "price": 35,
+                        "subTotal": 175,
+                        "tax": 17.5,
+                        "cost": 24.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 487,
+                "tax_amount": 48.7,
+                "total_amount": 535.7,
+                "date": "2023-08-16T15:53:23.413Z"
+            },
+            {
+                "order_id": "20",
+                "customer": {
+                    "_id": "20",
+                    "name": "Customer 20",
+                    "phone": "123-456-7890",
+                    "email": "customer20@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 4,
+                        "price": 15,
+                        "subTotal": 60,
+                        "tax": 6,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    },
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 2,
+                        "price": 23,
+                        "subTotal": 46,
+                        "tax": 4.6000000000000005,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 106,
+                "tax_amount": 10.600000000000001,
+                "total_amount": 116.6,
+                "date": "2023-04-27T13:09:07.565Z"
+            },
+            {
+                "order_id": "21",
+                "customer": {
+                    "_id": "21",
+                    "name": "Customer 21",
+                    "phone": "123-456-7890",
+                    "email": "customer21@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 2,
+                        "price": 23,
+                        "subTotal": 46,
+                        "tax": 4.6000000000000005,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 46,
+                "tax_amount": 4.6000000000000005,
+                "total_amount": 50.6,
+                "date": "2023-07-08T22:12:42.641Z"
+            },
+            {
+                "order_id": "22",
+                "customer": {
+                    "_id": "22",
+                    "name": "Customer 22",
+                    "phone": "123-456-7890",
+                    "email": "customer22@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 1,
+                        "price": 22,
+                        "subTotal": 22,
+                        "tax": 2.2,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 4,
+                        "price": 12,
+                        "subTotal": 48,
+                        "tax": 4.800000000000001,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 3,
+                        "price": 3,
+                        "subTotal": 9,
+                        "tax": 0.9,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 3,
+                        "price": 12,
+                        "subTotal": 36,
+                        "tax": 3.6,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 3,
+                        "price": 3,
+                        "subTotal": 9,
+                        "tax": 0.9,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 124,
+                "tax_amount": 12.400000000000002,
+                "total_amount": 136.4,
+                "date": "2023-09-29T23:52:46.099Z"
+            },
+            {
+                "order_id": "23",
+                "customer": {
+                    "_id": "23",
+                    "name": "Customer 23",
+                    "phone": "123-456-7890",
+                    "email": "customer23@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 4,
+                        "price": 12,
+                        "subTotal": 48,
+                        "tax": 4.800000000000001,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 5,
+                        "price": 22,
+                        "subTotal": 110,
+                        "tax": 11,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 333,
+                "tax_amount": 33.3,
+                "total_amount": 366.3,
+                "date": "2023-10-04T09:00:03.732Z"
+            },
+            {
+                "order_id": "24",
+                "customer": {
+                    "_id": "24",
+                    "name": "Customer 24",
+                    "phone": "123-456-7890",
+                    "email": "customer24@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chef's Special Burger",
+                        "quantity": 2,
+                        "price": 35,
+                        "subTotal": 70,
+                        "tax": 7,
+                        "cost": 24.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 3,
+                        "price": 12,
+                        "subTotal": 36,
+                        "tax": 3.6,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Seafood Paella",
+                        "quantity": 2,
+                        "price": 45,
+                        "subTotal": 90,
+                        "tax": 9,
+                        "cost": 31.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 4,
+                        "price": 12,
+                        "subTotal": 48,
+                        "tax": 4.800000000000001,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 369,
+                "tax_amount": 36.900000000000006,
+                "total_amount": 405.9,
+                "date": "2023-10-21T13:16:50.504Z"
+            },
+            {
+                "order_id": "25",
+                "customer": {
+                    "_id": "25",
+                    "name": "Customer 25",
+                    "phone": "123-456-7890",
+                    "email": "customer25@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chicken Parmesan",
+                        "quantity": 2,
+                        "price": 35,
+                        "subTotal": 70,
+                        "tax": 7,
+                        "cost": 24.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 195,
+                "tax_amount": 19.5,
+                "total_amount": 214.5,
+                "date": "2023-08-10T22:01:49.525Z"
+            },
+            {
+                "order_id": "26",
+                "customer": {
+                    "_id": "26",
+                    "name": "Customer 26",
+                    "phone": "123-456-7890",
+                    "email": "customer26@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 1,
+                        "price": 12,
+                        "subTotal": 12,
+                        "tax": 1.2000000000000002,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Seafood Paella",
+                        "quantity": 4,
+                        "price": 45,
+                        "subTotal": 180,
+                        "tax": 18,
+                        "cost": 31.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 3,
+                        "price": 25,
+                        "subTotal": 75,
+                        "tax": 7.5,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 367,
+                "tax_amount": 36.7,
+                "total_amount": 403.7,
+                "date": "2023-06-05T03:01:49.356Z"
+            },
+            {
+                "order_id": "27",
+                "customer": {
+                    "_id": "27",
+                    "name": "Customer 27",
+                    "phone": "123-456-7890",
+                    "email": "customer27@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 5,
+                        "price": 22,
+                        "subTotal": 110,
+                        "tax": 11,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 2,
+                        "price": 37,
+                        "subTotal": 74,
+                        "tax": 7.4,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 309,
+                "tax_amount": 30.9,
+                "total_amount": 339.9,
+                "date": "2023-08-03T19:48:27.510Z"
+            },
+            {
+                "order_id": "28",
+                "customer": {
+                    "_id": "28",
+                    "name": "Customer 28",
+                    "phone": "123-456-7890",
+                    "email": "customer28@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 1,
+                        "price": 12,
+                        "subTotal": 12,
+                        "tax": 1.2000000000000002,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 12,
+                "tax_amount": 1.2000000000000002,
+                "total_amount": 13.2,
+                "date": "2023-12-29T12:39:05.982Z"
+            },
+            {
+                "order_id": "29",
+                "customer": {
+                    "_id": "29",
+                    "name": "Customer 29",
+                    "phone": "123-456-7890",
+                    "email": "customer29@example.com"
+                },
+                "items": [
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 5,
+                        "price": 37,
+                        "subTotal": 185,
+                        "tax": 18.5,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 5,
+                        "price": 3,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 200,
+                "tax_amount": 20,
+                "total_amount": 220,
+                "date": "2023-11-11T01:05:09.025Z"
+            },
+            {
+                "order_id": "30",
+                "customer": {
+                    "_id": "30",
+                    "name": "Customer 30",
+                    "phone": "123-456-7890",
+                    "email": "customer30@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chicken Caesar Wrap",
+                        "quantity": 1,
+                        "price": 29,
+                        "subTotal": 29,
+                        "tax": 2.9000000000000004,
+                        "cost": 20.3,
+                        "category_name": "Wraps"
+                    },
+                    {
+                        "name": "Chef's Special Burger",
+                        "quantity": 2,
+                        "price": 35,
+                        "subTotal": 70,
+                        "tax": 7,
+                        "cost": 24.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 2,
+                        "price": 12,
+                        "subTotal": 24,
+                        "tax": 2.4000000000000004,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 4,
+                        "price": 37,
+                        "subTotal": 148,
+                        "tax": 14.8,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 271,
+                "tax_amount": 27.1,
+                "total_amount": 298.1,
+                "date": "2024-03-02T05:28:29.512Z"
+            },
+            {
+                "order_id": "31",
+                "customer": {
+                    "_id": "31",
+                    "name": "Customer 31",
+                    "phone": "123-456-7890",
+                    "email": "customer31@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 1,
+                        "price": 3,
+                        "subTotal": 3,
+                        "tax": 0.30000000000000004,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Chocolate Lava Cake",
+                        "quantity": 1,
+                        "price": 25,
+                        "subTotal": 25,
+                        "tax": 2.5,
+                        "cost": 17.5,
+                        "category_name": "Desserts"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 28,
+                "tax_amount": 2.8,
+                "total_amount": 30.8,
+                "date": "2023-07-20T04:41:00.644Z"
+            },
+            {
+                "order_id": "32",
+                "customer": {
+                    "_id": "32",
+                    "name": "Customer 32",
+                    "phone": "123-456-7890",
+                    "email": "customer32@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 3,
+                        "price": 22,
+                        "subTotal": 66,
+                        "tax": 6.6000000000000005,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 1,
+                        "price": 25,
+                        "subTotal": 25,
+                        "tax": 2.5,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 1,
+                        "price": 25,
+                        "subTotal": 25,
+                        "tax": 2.5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Chef's Special Burger",
+                        "quantity": 2,
+                        "price": 35,
+                        "subTotal": 70,
+                        "tax": 7,
+                        "cost": 24.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 286,
+                "tax_amount": 28.6,
+                "total_amount": 314.6,
+                "date": "2023-06-12T22:04:30.287Z"
+            },
+            {
+                "order_id": "33",
+                "customer": {
+                    "_id": "33",
+                    "name": "Customer 33",
+                    "phone": "123-456-7890",
+                    "email": "customer33@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 1,
+                        "price": 12,
+                        "subTotal": 12,
+                        "tax": 1.2000000000000002,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 2,
+                        "price": 22,
+                        "subTotal": 44,
+                        "tax": 4.4,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 2,
+                        "price": 3,
+                        "subTotal": 6,
+                        "tax": 0.6000000000000001,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 4,
+                        "price": 22,
+                        "subTotal": 88,
+                        "tax": 8.8,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 275,
+                "tax_amount": 27.500000000000004,
+                "total_amount": 302.5,
+                "date": "2023-04-12T01:05:44.354Z"
+            },
+            {
+                "order_id": "34",
+                "customer": {
+                    "_id": "34",
+                    "name": "Customer 34",
+                    "phone": "123-456-7890",
+                    "email": "customer34@example.com"
+                },
+                "items": [
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 3,
+                        "price": 37,
+                        "subTotal": 111,
+                        "tax": 11.100000000000001,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 1,
+                        "price": 12,
+                        "subTotal": 12,
+                        "tax": 1.2000000000000002,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 5,
+                        "price": 3,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 5,
+                        "price": 23,
+                        "subTotal": 115,
+                        "tax": 11.5,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 303,
+                "tax_amount": 30.3,
+                "total_amount": 333.3,
+                "date": "2023-08-31T03:25:41.881Z"
+            },
+            {
+                "order_id": "35",
+                "customer": {
+                    "_id": "35",
+                    "name": "Customer 35",
+                    "phone": "123-456-7890",
+                    "email": "customer35@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Mango Smoothie",
+                        "quantity": 3,
+                        "price": 5,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 3.5,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 4,
+                        "price": 15,
+                        "subTotal": 60,
+                        "tax": 6,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 75,
+                "tax_amount": 7.5,
+                "total_amount": 82.5,
+                "date": "2024-04-01T23:50:43.653Z"
+            },
+            {
+                "order_id": "36",
+                "customer": {
+                    "_id": "36",
+                    "name": "Customer 36",
+                    "phone": "123-456-7890",
+                    "email": "customer36@example.com"
+                },
+                "items": [
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 3,
+                        "price": 37,
+                        "subTotal": 111,
+                        "tax": 11.100000000000001,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 1,
+                        "price": 12,
+                        "subTotal": 12,
+                        "tax": 1.2000000000000002,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 3,
+                        "price": 25,
+                        "subTotal": 75,
+                        "tax": 7.5,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Seafood Paella",
+                        "quantity": 1,
+                        "price": 45,
+                        "subTotal": 45,
+                        "tax": 4.5,
+                        "cost": 31.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 2,
+                        "price": 15,
+                        "subTotal": 30,
+                        "tax": 3,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 273,
+                "tax_amount": 27.3,
+                "total_amount": 300.3,
+                "date": "2023-12-20T14:49:21.387Z"
+            },
+            {
+                "order_id": "37",
+                "customer": {
+                    "_id": "37",
+                    "name": "Customer 37",
+                    "phone": "123-456-7890",
+                    "email": "customer37@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 5,
+                        "price": 3,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 1,
+                        "price": 25,
+                        "subTotal": 25,
+                        "tax": 2.5,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 1,
+                        "price": 3,
+                        "subTotal": 3,
+                        "tax": 0.30000000000000004,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 4,
+                        "price": 3,
+                        "subTotal": 12,
+                        "tax": 1.2000000000000002,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 55,
+                "tax_amount": 5.5,
+                "total_amount": 60.5,
+                "date": "2024-03-09T06:59:11.549Z"
+            },
+            {
+                "order_id": "38",
+                "customer": {
+                    "_id": "38",
+                    "name": "Customer 38",
+                    "phone": "123-456-7890",
+                    "email": "customer38@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Seafood Paella",
+                        "quantity": 5,
+                        "price": 45,
+                        "subTotal": 225,
+                        "tax": 22.5,
+                        "cost": 31.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 1,
+                        "price": 15,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    },
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 4,
+                        "price": 25,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    },
+                    {
+                        "name": "Mango Smoothie",
+                        "quantity": 1,
+                        "price": 5,
+                        "subTotal": 5,
+                        "tax": 0.5,
+                        "cost": 3.5,
+                        "category_name": "Beverages"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 445,
+                "tax_amount": 44.5,
+                "total_amount": 489.5,
+                "date": "2023-12-04T11:11:15.727Z"
+            },
+            {
+                "order_id": "39",
+                "customer": {
+                    "_id": "39",
+                    "name": "Customer 39",
+                    "phone": "123-456-7890",
+                    "email": "customer39@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Mozzarella Sticks",
+                        "quantity": 1,
+                        "price": 20,
+                        "subTotal": 20,
+                        "tax": 2,
+                        "cost": 14,
+                        "category_name": "Appetizers"
+                    },
+                    {
+                        "name": "Chicken Caesar Wrap",
+                        "quantity": 4,
+                        "price": 29,
+                        "subTotal": 116,
+                        "tax": 11.600000000000001,
+                        "cost": 20.3,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 136,
+                "tax_amount": 13.600000000000001,
+                "total_amount": 149.6,
+                "date": "2023-07-19T20:26:41.918Z"
+            },
+            {
+                "order_id": "40",
+                "customer": {
+                    "_id": "40",
+                    "name": "Customer 40",
+                    "phone": "123-456-7890",
+                    "email": "customer40@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Mozzarella Sticks",
+                        "quantity": 5,
+                        "price": 20,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 14,
+                        "category_name": "Appetizers"
+                    },
+                    {
+                        "name": "Chicken Caesar Wrap",
+                        "quantity": 5,
+                        "price": 29,
+                        "subTotal": 145,
+                        "tax": 14.5,
+                        "cost": 20.3,
+                        "category_name": "Wraps"
+                    },
+                    {
+                        "name": "Pad Thai",
+                        "quantity": 4,
+                        "price": 12,
+                        "subTotal": 48,
+                        "tax": 4.800000000000001,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 3,
+                        "price": 15,
+                        "subTotal": 45,
+                        "tax": 4.5,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Credit Card",
+                "sub_total": 463,
+                "tax_amount": 46.3,
+                "total_amount": 509.3,
+                "date": "2023-12-10T21:50:31.079Z"
+            },
+            {
+                "order_id": "41",
+                "customer": {
+                    "_id": "41",
+                    "name": "Customer 41",
+                    "phone": "123-456-7890",
+                    "email": "customer41@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Mango Smoothie",
+                        "quantity": 3,
+                        "price": 5,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 3.5,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Chocolate Lava Cake",
+                        "quantity": 5,
+                        "price": 25,
+                        "subTotal": 125,
+                        "tax": 12.5,
+                        "cost": 17.5,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Greek Salad",
+                        "quantity": 4,
+                        "price": 23,
+                        "subTotal": 92,
+                        "tax": 9.200000000000001,
+                        "cost": 16.1,
+                        "category_name": "Salads"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 282,
+                "tax_amount": 28.200000000000003,
+                "total_amount": 310.2,
+                "date": "2023-12-23T05:23:08.771Z"
+            },
+            {
+                "order_id": "42",
+                "customer": {
+                    "_id": "42",
+                    "name": "Customer 42",
+                    "phone": "123-456-7890",
+                    "email": "customer42@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cheese Quesadilla",
+                        "quantity": 1,
+                        "price": 25,
+                        "subTotal": 25,
+                        "tax": 2.5,
+                        "cost": 17.5,
+                        "category_name": "Kids Menu"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 25,
+                "tax_amount": 2.5,
+                "total_amount": 27.5,
+                "date": "2023-10-27T08:45:48.911Z"
+            },
+            {
+                "order_id": "43",
+                "customer": {
+                    "_id": "43",
+                    "name": "Customer 43",
+                    "phone": "123-456-7890",
+                    "email": "customer43@example.com"
+                },
+                "items": [
+                    {
+                        "name": "New York Cheesecake",
+                        "quantity": 5,
+                        "price": 37,
+                        "subTotal": 185,
+                        "tax": 18.5,
+                        "cost": 25.9,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Chef's Special Burger",
+                        "quantity": 3,
+                        "price": 35,
+                        "subTotal": 105,
+                        "tax": 10.5,
+                        "cost": 24.5,
+                        "category_name": "Specials"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 290,
+                "tax_amount": 29,
+                "total_amount": 319,
+                "date": "2024-01-18T06:39:22.902Z"
+            },
+            {
+                "order_id": "44",
+                "customer": {
+                    "_id": "44",
+                    "name": "Customer 44",
+                    "phone": "123-456-7890",
+                    "email": "customer44@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 4,
+                        "price": 3,
+                        "subTotal": 12,
+                        "tax": 1.2000000000000002,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Mango Smoothie",
+                        "quantity": 2,
+                        "price": 5,
+                        "subTotal": 10,
+                        "tax": 1,
+                        "cost": 3.5,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Mozzarella Sticks",
+                        "quantity": 5,
+                        "price": 20,
+                        "subTotal": 100,
+                        "tax": 10,
+                        "cost": 14,
+                        "category_name": "Appetizers"
+                    },
+                    {
+                        "name": "Mango Smoothie",
+                        "quantity": 3,
+                        "price": 5,
+                        "subTotal": 15,
+                        "tax": 1.5,
+                        "cost": 3.5,
+                        "category_name": "Beverages"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 5,
+                        "price": 12,
+                        "subTotal": 60,
+                        "tax": 6,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    }
+                ],
+                "payment_method": "Online Payment",
+                "sub_total": 197,
+                "tax_amount": 19.7,
+                "total_amount": 216.7,
+                "date": "2023-11-25T20:29:05.218Z"
+            },
+            {
+                "order_id": "45",
+                "customer": {
+                    "_id": "45",
+                    "name": "Customer 45",
+                    "phone": "123-456-7890",
+                    "email": "customer45@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 1,
+                        "price": 25,
+                        "subTotal": 25,
+                        "tax": 2.5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Spaghetti Bolognese",
+                        "quantity": 2,
+                        "price": 12,
+                        "subTotal": 24,
+                        "tax": 2.4000000000000004,
+                        "cost": 8.4,
+                        "category_name": "Noodles"
+                    },
+                    {
+                        "name": "Grilled Salmon",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Chocolate Lava Cake",
+                        "quantity": 3,
+                        "price": 25,
+                        "subTotal": 75,
+                        "tax": 7.5,
+                        "cost": 17.5,
+                        "category_name": "Desserts"
+                    },
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 2,
+                        "price": 22,
+                        "subTotal": 44,
+                        "tax": 4.4,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 218,
+                "tax_amount": 21.799999999999997,
+                "total_amount": 239.8,
+                "date": "2023-09-19T07:49:18.011Z"
+            },
+            {
+                "order_id": "46",
+                "customer": {
+                    "_id": "46",
+                    "name": "Customer 46",
+                    "phone": "123-456-7890",
+                    "email": "customer46@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Seafood Paella",
+                        "quantity": 3,
+                        "price": 45,
+                        "subTotal": 135,
+                        "tax": 13.5,
+                        "cost": 31.5,
+                        "category_name": "Specials"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 135,
+                "tax_amount": 13.5,
+                "total_amount": 148.5,
+                "date": "2024-02-07T16:11:04.776Z"
+            },
+            {
+                "order_id": "47",
+                "customer": {
+                    "_id": "47",
+                    "name": "Customer 47",
+                    "phone": "123-456-7890",
+                    "email": "customer47@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Seafood Paella",
+                        "quantity": 5,
+                        "price": 45,
+                        "subTotal": 225,
+                        "tax": 22.5,
+                        "cost": 31.5,
+                        "category_name": "Specials"
+                    },
+                    {
+                        "name": "Chicken Nuggets",
+                        "quantity": 2,
+                        "price": 22,
+                        "subTotal": 44,
+                        "tax": 4.4,
+                        "cost": 15.4,
+                        "category_name": "Kids Menu"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 269,
+                "tax_amount": 26.9,
+                "total_amount": 295.9,
+                "date": "2023-05-22T19:13:46.337Z"
+            },
+            {
+                "order_id": "48",
+                "customer": {
+                    "_id": "48",
+                    "name": "Customer 48",
+                    "phone": "123-456-7890",
+                    "email": "customer48@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chocolate Lava Cake",
+                        "quantity": 2,
+                        "price": 25,
+                        "subTotal": 50,
+                        "tax": 5,
+                        "cost": 17.5,
+                        "category_name": "Desserts"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 50,
+                "tax_amount": 5,
+                "total_amount": 55,
+                "date": "2023-09-14T08:34:06.715Z"
+            },
+            {
+                "order_id": "49",
+                "customer": {
+                    "_id": "49",
+                    "name": "Customer 49",
+                    "phone": "123-456-7890",
+                    "email": "customer49@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 3,
+                        "price": 25,
+                        "subTotal": 75,
+                        "tax": 7.5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Cobb Salad",
+                        "quantity": 1,
+                        "price": 25,
+                        "subTotal": 25,
+                        "tax": 2.5,
+                        "cost": 17.5,
+                        "category_name": "Salads"
+                    },
+                    {
+                        "name": "Iced Tea",
+                        "quantity": 4,
+                        "price": 3,
+                        "subTotal": 12,
+                        "tax": 1.2000000000000002,
+                        "cost": 2.1,
+                        "category_name": "Beverages"
+                    }
+                ],
+                "payment_method": "Cash",
+                "sub_total": 112,
+                "tax_amount": 11.2,
+                "total_amount": 123.2,
+                "date": "2023-06-05T16:09:58.304Z"
+            },
+            {
+                "order_id": "50",
+                "customer": {
+                    "_id": "50",
+                    "name": "Customer 50",
+                    "phone": "123-456-7890",
+                    "email": "customer50@example.com"
+                },
+                "items": [
+                    {
+                        "name": "Chicken Parmesan",
+                        "quantity": 3,
+                        "price": 35,
+                        "subTotal": 105,
+                        "tax": 10.5,
+                        "cost": 24.5,
+                        "category_name": "Main Courses"
+                    },
+                    {
+                        "name": "Vegetarian Falafel Wrap",
+                        "quantity": 2,
+                        "price": 15,
+                        "subTotal": 30,
+                        "tax": 3,
+                        "cost": 10.5,
+                        "category_name": "Wraps"
+                    }
+                ],
+                "payment_method": "Debit Card",
+                "sub_total": 135,
+                "tax_amount": 13.5,
+                "total_amount": 148.5,
+                "date": "2023-07-09T00:21:18.762Z"
+            }
+        ]
+    }
+]

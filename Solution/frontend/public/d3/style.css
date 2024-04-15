@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+/* .cls-common {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+} */
+.cls-common .col a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cls-common .btn-card {
+  width: 180px;
+  height: 180px;
+  border-radius: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  background-color: #f8fafb;
+}
+.cls-common .btn-card:hover {
+  transform: scale(1.05);
+}
+.maroon {
+  color: #c00000;
+}
+.cls-deepam #chart-container,
+.cls-deepam .cls-chart-container-svg {
+  width: 70vw;
+  height: 90vh;
+}
+.cls-shivang .tooltip,
+.cls-smit .tooltip,
+.cls-deepam .tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.cls-shivang .tooltip:after,
+.cls-smit .tooltip:after,
+.cls-deepam .tooltip:after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cls-shivang .data-point:hover .tooltip,
+.cls-smit .data-point:hover .tooltip,
+.cls-deepam .data-point:hover .tooltip {
+  opacity: 1;
+}
+.cls-deepam .green {
+  fill: rgb(76, 175, 80);
+}
+.cls-deepam .red {
+  fill: rgb(220, 20, 60);
+}
+.cls-deepam .yellow {
+  fill: rgb(255, 204, 0);
+}
+.cls-deepam .blue {
+  fill: rgb(100, 149, 237);
+}
+.cls-smit .legend,
+.cls-deepam .legend {
+  font-size: 14px;
+}
+.cls-smit .legend-item,
+.cls-deepam .legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+  justify-content: center;
+}
+.cls-smit .legend-item div,
+.cls-deepam .legend-item div {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.cls-smit .legend-item rect,
+.cls-deepam .legend-item rect {
+  stroke-width: 2px;
+}
+.cls-smit .legend-item:hover rect,
+.cls-deepam .legend-item:hover rect {
+  stroke-width: 4px;
+  stroke: #000;
+}
+.cls-deepam .legend-item:hover text {
+  fill: #000;
+}
+/* Axis styles */
+.cls-deepam .x-axis path,
+.cls-deepam .x-axis line,
+.cls-deepam .y-axis path,
+.cls-deepam .y-axis line {
+  fill: none;
+  stroke: #333;
+  shape-rendering: crispEdges;
+}
+.cls-shivang .x-axis,
+.cls-shivang .x-axis text,
+.cls-shivang .y-axis text,
+.cls-deepam .average-text,
+.cls-deepam .legend-item text,
+.cls-deepam .x-axis text,
+.cls-deepam .y-axis text {
+  font-size: 14px;
+  fill: #333;
+  letter-spacing: 0.4px;
+}
+.cls-deepam .cls-deepam .legend-item text {
+  font-weight: bold;
+}
+.cls-deepam .average-text {
+  fill: #c00000;
+}
+
+.cls-deepam .average-line {
+  stroke: #c00000;
+  stroke-dasharray: 5;
+}
+/* Gridline styles */
+.cls-shivang .grid line,
+.cls-deepam .grid line {
+  stroke: #ddd;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+.cls-deepam #chart-container-3,
+.cls-deepam #chart-container-3 svg {
+  width: 84vw;
+  height: 90vh;
+}
+.cls-deepam .cls-legend-filter {
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+.cls-deepam .cls-legend-filter:hover {
+  text-decoration: underline;
+}
+
+.cls-smit .cls-legend-filter {
+  background-color: azure;
+}
+
+.cls-shivang .total-label {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.cls-common .extra {
+  width: 120px;
+}
+
+.cls-common .extra a {
+  height: 60px;
+  border-radius: 10px;
+}
+
+nav {
+  position: sticky !important;
+  width: 100%;
+  background-color: white;
+  color: black !important;
+  box-shadow: 0px 7px 15px 5px rgba(11, 9, 15, 0.4);
+  margin-bottom: 40px;
+  /* border-top: 10px solid #ef4444; */
+}
+nav ul {
+  margin-bottom: 0px;
+}
+nav ul li {
+  display: inline-block;
+  padding-left: 20px;
+  font-size: 24px;
+  letter-spacing: 0.3px;
+  text-shadow: 2px 2px 5px white;
+  transition: 0.3s ease-in-out;
+  color: black;
+}
+nav ul li:hover {
+  scale: 1.1;
+}
+.navbar-brand {
+  font-size: 25px !important;
+  font-weight: bold;
+}
+
+footer {
+  width: 100%;
+}
+footer .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
