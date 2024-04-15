@@ -5,21 +5,32 @@ import { useAuth } from "../authentication/AuthContext";
 function Header() {
   const { user, logout } = useAuth();
 
-  const renderNavLink = (to, label, allowedTypes) => {
+  const renderNavLink = (to, label, allowedTypes, openInNewTab = false) => {
     if (!user && !allowedTypes.includes("public")) return null;
     if (
       user &&
+      allowedTypes &&
       !allowedTypes.includes(user.type) &&
       !allowedTypes.includes("public")
     )
       return null;
-    return (
-      <li className="nav-item">
-        <Link className="nav-link" to={to}>
-          {label}
-        </Link>
-      </li>
+
+    const navComponent = openInNewTab ? (
+      <a
+        className="nav-link"
+        href={to}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {label}
+      </a>
+    ) : (
+      <Link className="nav-link" to={to}>
+        {label}
+      </Link>
     );
+
+    return <li className="nav-item">{navComponent}</li>;
   };
 
   return (
@@ -52,6 +63,7 @@ function Header() {
                   ? []
                   : ["public"]
               )}
+              {renderNavLink("/d3/index.html", "Analytics", ["admin"], true)}{" "}
               {renderNavLink("/cart", "Cart", ["online"])}
               {renderNavLink("/checkout", "Checkout", ["online"])}
               {/* {renderNavLink("/about", "About Us", ["public"])}

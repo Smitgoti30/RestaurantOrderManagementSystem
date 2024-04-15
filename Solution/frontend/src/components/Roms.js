@@ -1,10 +1,11 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./authentication/AuthContext.js";
 import ProtectedRoute from "./authentication/ProtectedRoute.js";
 import HomeC from "./customer/Home";
 import NoPage from "./NoPage";
 import Customer from "./admin/customer/Customer";
+import Reports from "./admin/dashboard/Reports";
 import MenuAdmin from "./admin/menu/MenuAdmin";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
@@ -50,7 +51,7 @@ function Roms() {
                   </ProtectedRoute>
                 }
               />
-
+              <Route path="/d3" element={<Navigate to="/d3/index.html" />} />
               <Route
                 path="/admin/menu"
                 element={
