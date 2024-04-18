@@ -1,5 +1,6 @@
-import { gql } from "@apollo/client";
+import { gql,useMutation } from "@apollo/client";
 import client from "./apolloClient"; // Assuming you have configured Apollo Client
+import { loadStripe } from '@stripe/stripe-js';
 
 const GET_ALL_MENU = gql`
   query GetAllMenu {
@@ -67,10 +68,12 @@ const UPDATE_CATEGORY = gql`
 `;
 
 const UPDATE_CATEGORY_STATUS = gql`
-  mutation UpdateCategory($id: ID!, $status: Boolean!) {
-    updateCategory(id: $id, status: $status) {
+  mutation UpdateCategoryStatus(
+    $updateCategoryStatusId: ID!
+    $status: Boolean!
+  ) {
+    updateCategoryStatus(id: $updateCategoryStatusId, status: $status) {
       _id
-      status
     }
   }
 `;
@@ -88,9 +91,9 @@ const GET_MENU_ITEM = gql`
   }
 `;
 
-const ADD_MENU_ITEM = gql`
-  mutation AddMenuItem($menuData: MenuInput!) {
-    addMenuItem(menuData: $menuData) {
+const ADD_MENU = gql`
+  mutation AddMenu($price: Float!, $image: String!, $categoryName: String!, $name: String!, $description: String!) {
+    addMenu(price: $price, image: $image, category_name: $categoryName, name: $name, description: $description) {
       _id
       name
       description
@@ -115,14 +118,22 @@ const DELETE_MENU_ITEM = gql`
 `;
 
 const UPDATE_MENU_ITEM = gql`
-  mutation UpdateMenuItem($id: ID!, $menuData: MenuInput!) {
-    updateMenuItem(id: $id, menuData: $menuData) {
+mutation UpdateMenuItem($id: ID!, $name: String, $description: String, $price: Float, $image: String, $categoryName: String) {
+  updateMenuItem(id: $id, name: $name, description: $description, price: $price, image: $image, category_name: $categoryName) {
+    _id
+    name
+    description
+    price
+  }
+}`;
+
+export const CREATE_ORDER = gql`
+  mutation CreateOrder($order: OrderInput, $items: [OrderItemInput]) {
+    createOrder(order: $order, items: $items) {
       _id
-      name
-      description
-      price
-      image
-      category_name
+      status
+      type
+      table_number
     }
   }
 `;
@@ -162,6 +173,19 @@ async function addCategory(categoryData) {
   }
 }
 
+async function addOrder(orderData) {
+  try {
+    const { data } = await client.mutate({
+      mutation: CREATE_ORDER,
+      variables: orderData,
+    });
+    return data.addCategory;
+  } catch (error) {
+    console.error("Failed to add category:", error);
+    throw new Error("Failed to add category");
+  }
+}
+
 async function getCategory(id) {
   try {
     const { data } = await client.query({
@@ -188,17 +212,12 @@ async function updateCategory(id, categoryData) {
   }
 }
 
-async function updateCategoryStatus(id, status) {
-  console.log(id);
-  console.log(status);
+async function updateCategoryStatus(updateCategoryStatusId, status) {
   try {
     const { data } = await client.mutate({
       mutation: UPDATE_CATEGORY_STATUS,
-      variables: { id, status },
+      variables: { updateCategoryStatusId, status: Boolean(status) },
     });
-    console.log(id);
-    console.log(status);
-    console.log(data.updateCategoryStatus);
     return data.updateCategoryStatus;
   } catch (error) {
     console.error("Failed to update category:", error);
@@ -219,13 +238,19 @@ async function getMenuItem(id) {
   }
 }
 
-async function addMenuItem(menuData) {
+async function addMenu(menuData) {
   try {
     const { data } = await client.mutate({
-      mutation: ADD_MENU_ITEM,
-      variables: { menuData },
+      mutation: ADD_MENU,
+        variables: {
+          price: menuData.price,
+          image: menuData.image, 
+          categoryName: menuData.category_name,
+          name: menuData.name,
+          description: menuData.description
+        },
     });
-    return data.addMenuItem;
+    return data.addMenu;
   } catch (error) {
     console.error("Failed to add menu item:", error);
     throw new Error("Failed to add menu item");
@@ -245,25 +270,22 @@ async function deleteMenuItem(id) {
   }
 }
 
-async function updateMenuItem(id, menuData) {
+async function updateMenuItem(menuData) {
+  console.log(menuData);
   try {
     const { data } = await client.mutate({
       mutation: UPDATE_MENU_ITEM,
-      variables: { id, menuData },
+      variables: {
+          id:menuData.id,
+          name: menuData.name,
+          description: menuData.description,
+          price: menuData.price,
+       },
     });
-    return data.updateMenuItem;
+    return data.UpdateMenuItem;
   } catch (error) {
     console.error("Failed to update menu item:", error);
     throw new Error("Failed to update menu item");
-  }
-}
-
-async function addMenu(menuData) {
-  try {
-    // Your implementation to add menu data
-  } catch (error) {
-    console.error("Failed to add menu:", error);
-    throw new Error("Failed to add menu");
   }
 }
 
@@ -277,9 +299,8 @@ export {
   updateCategory,
   updateCategoryStatus,
   getMenuItem,
-  addMenuItem,
   deleteMenuItem,
   updateMenuItem,
   addMenu,
-  // Export other API functions
+  addOrder,
 };

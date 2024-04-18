@@ -52,7 +52,6 @@ const Receipt = () => {
     total_amount,
     date,
   } = receipt;
-  debugger;
   // Format date here as necessary
   const formattedDate = new Date(date).toLocaleString("en-US", {
     weekday: "short",

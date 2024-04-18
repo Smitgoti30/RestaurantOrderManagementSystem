@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import cloudinary from "../utils/cloudinary.js";
-
 import Category from "../models/Category.js";
 import Customer from "../models/Customer.js";
 import Menu from "../models/Menu.js";
@@ -10,6 +8,9 @@ import Receipt from "../models/Receipt.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import sendEmail from "../utils/email.js";
+import Stripe from 'stripe';
+
+const stripe = new Stripe("sk_test_51OzPMy09rVaNz0yF3dEe9DESSb2EQeim40SeK2Xhzwiesi7XXxvlbiEexmMQeAU6FI6pxr7tTw7W802yRyS0xTga002q8QttnZ");
 const JWT_SECRET = process.env.JWT_SECRET || "jwt_secret_code";
 
 // Hash password
@@ -98,6 +99,7 @@ const resolvers = {
         throw new Error(`Fetching order by ID failed: ${error.message}`);
       }
     },
+    
     getOrderDetails: async (_, { id }) => {
       try {
         const order = await Order.findById(id);
@@ -196,6 +198,44 @@ const resolvers = {
     },
   },
   Mutation: {
+
+    createCheckoutSession: async (_, { products, tableNumber }) => {
+      const line_items = products.map((product) => ({
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: product.name,
+          },
+          unit_amount: product.amount * 100,
+        },
+        quantity: product.quantity,
+      }));
+
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        line_items: line_items,
+        mode: "payment",
+        success_url: "http://localhost:3000/success",
+        cancel_url: "http://localhost:3000/failed",
+      });
+
+      // Create order in the database
+      const order = new Order({
+        customer_id: null, // You can set this to null for online orders
+        date_time: new Date(),
+        status: "Pending", // Assuming the initial status is pending
+        type: "online",
+        table_number: tableNumber, // Assuming table number is 0 for online orders
+        total: products.reduce((total, product) => total + product.amount * product.quantity, 0)
+      });
+
+      await order.save();
+
+      console.log("Order created:", order);
+
+      return { id: session.id };
+    },
+      
     createCustomer: async (parent, args, context, info) => {
       try {
         console.log("createCustomer", args);
@@ -517,9 +557,9 @@ const resolvers = {
     },
     updateCategoryStatus: async (_, { id, status }) => {
       try {
-        const updatedCategoryStatus = await Category.updateOne(
-          { _id: id },
-          { $set: { status } },
+        const updatedCategoryStatus = await Category.findByIdAndUpdate(
+          id,
+        { status } ,
           { new: true }
         );
         return updatedCategoryStatus;
@@ -569,10 +609,10 @@ const resolvers = {
       try {
         const { createReadStream, filename, mimetype, encoding } = await file;
         const stream = createReadStream();
-        const result = await cloudinary.uploadStream(stream);
+        const result = await uploadStream(stream);
         return result.secure_url;
       } catch (error) {
-        throw new Error("Error uploading file");
+        throw new Error("Error uploading file", error.message);
       }
     },
   },

@@ -1,25 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../authentication/AuthContext";
-
+import Logo from "../../../src/assets/images/Logo.gif";
 function Header() {
   const { user, logout } = useAuth();
 
-  const renderNavLink = (to, label, allowedTypes) => {
+  const cartItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+  const itemCount = cartItems.length;
+  const renderNavLink = (to, label, allowedTypes, openInNewTab = false) => {
     if (!user && !allowedTypes.includes("public")) return null;
     if (
       user &&
+      allowedTypes &&
       !allowedTypes.includes(user.type) &&
       !allowedTypes.includes("public")
     )
       return null;
-    return (
-      <li className="nav-item">
-        <Link className="nav-link" to={to}>
-          {label}
-        </Link>
-      </li>
+
+    const navComponent = openInNewTab ? (
+      <a
+        className="nav-link"
+        href={to}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {label}
+      </a>
+    ) : (
+      <Link className="nav-link" to={to}>
+        {label}
+      </Link>
     );
+
+    return <li className="nav-item">{navComponent}</li>;
   };
 
   return (
@@ -27,7 +40,7 @@ function Header() {
       <nav className="navbar navbar-expand-lg">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            NAVBAR
+            <img src={Logo} alt="logo" height="46px" />
           </Link>
           <button
             className="navbar-toggler"
@@ -42,8 +55,10 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
-              {renderNavLink("/admin/menu", "Menu", ["staff", "admin"])}
+              {/* {renderNavLink("/admin/on/order", "Order", ["staff", "admin"])} */}
               {renderNavLink("/customer", "Customer", ["staff", "admin"])}
+              {renderNavLink("/admin/category", "Category", ["staff", "admin"])}
+              {renderNavLink("/admin/menu", "Menu", ["staff", "admin"])}
               {renderNavLink(
                 "/menu",
                 "Menu",
@@ -51,7 +66,9 @@ function Header() {
                   ? []
                   : ["public"]
               )}
-
+              {renderNavLink("/d3/index.html", "Analytics", ["admin"], true)}{" "}
+              {renderNavLink("/cart", "Cart", ["online"])}
+              {renderNavLink("/checkout", "Checkout", ["online"])}
               {/* {renderNavLink("/about", "About Us", ["public"])}
               {renderNavLink("/contact", "Contact", ["public"])}{" "} */}
               {user ? (
@@ -62,6 +79,15 @@ function Header() {
                 </li>
               ) : (
                 renderNavLink("/auth", "Login", ["public"])
+              )}
+              {renderNavLink(
+                "/cart",
+                <div className="cart-icon">
+                  <span role="img" aria-label="cart">
+                    🛒
+                  </span>
+                </div>,
+                ["online"]
               )}
             </ul>
           </div>

@@ -31,7 +31,6 @@ function MenuAdmin() {
     const fetchData = async () => {
       const data = await getMenu();
       setMenu(data);
-      console.log(data);
     };
     fetchData();
   }, []);
@@ -51,13 +50,10 @@ function MenuAdmin() {
     }, {})
   );
 
-  // const uniqueCategories = [...new Set(menu.map((item) => item.category_name))];
-
   const handleShowUpdate = async (id) => {
     try {
       const data = await getMenuItem(id);
       setItem(data);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching category:", error);
     }
@@ -71,16 +67,13 @@ function MenuAdmin() {
 
   return (
     <>
-      <div className="container menu-admin-class">
-        <CategoryAdmin />
-        <h1 className="m-4">Items</h1>
-
+      <div className="container menu-admin-class ccc-smit">
+        <h1 className="text-decoration-underline">Menu Items</h1>
         <table className="table table-striped">
           <caption>
             <button className="btn btn-red" onClick={handleShow}>
               Add Item
             </button>
-
             <AddItemModal
               show={show}
               handleClose={handleClose}
@@ -101,11 +94,22 @@ function MenuAdmin() {
             {uniqueCategories.map((category, category_index) =>
               category.items.map((item, index) => (
                 <tr key={category_index + index}>
-                  <td>{item.name}</td>
+                  <td>
+                    <span className="decorated-text">{item.name}</span>
+                  </td>
                   <td>{item.description}</td>
-                  <td>{category.category_name}</td>
-                  <td>{item.image}</td>
-                  <td>{item.price}</td>
+                  <td>
+                    <span className="badge">{category.category_name}</span>
+                  </td>
+                  <td>
+                    <div className="cart-icon-container">
+                      <img
+                        src={require(`../../../assets/images/${item.image}`)}
+                        alt={item.name}
+                      />
+                    </div>
+                  </td>
+                  <td>$ {item.price}</td>
                   <td>
                     <button
                       className="btn-menu"
@@ -140,7 +144,6 @@ function MenuAdmin() {
         show={showDelete}
         handleClose={handleCloseDelete}
         item={item}
-        setMenu={(updatedData) => setMenu(updatedData)}
       />
     </>
   );

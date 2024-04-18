@@ -43,7 +43,7 @@ const UpdateCategoryModal = ({
       <Modal.Body>
         <form onSubmit={handleSubmitCategory} method="POST">
           <div className="mb-2">
-            <label htmlFor="CategoryName">Category Name:</label>
+            <label htmlFor="CategoryName" className="text-red text-decoration-underline">Category Name:</label>
             <input
               type="text"
               name="CategoryName"
@@ -54,19 +54,20 @@ const UpdateCategoryModal = ({
             />
           </div>
           <div className="mb-2">
-            <label htmlFor="categoryDescription">Description:</label>
-            <textarea
+            <label htmlFor="categoryDescription" className="text-red text-decoration-underline">Description:</label>
+            <input
               name="Description"
               id="categoryDescription"
-              rows="2"
-              cols="26"
+              type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
-            ></textarea>
+            />
           </div>
           <hr />
+          <div className="text-end">
           <input className="btn-red p-2" type="submit" value="UPDATE" />
+          </div>
         </form>
       </Modal.Body>
     </Modal>

@@ -1,18 +1,14 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { getAllCategory, updateCategoryStatus } from "../../../api";
+import { updateCategoryStatus } from "../../../api";
 
-const StatusModal = ({ id, status, show, handleClose, setCategory }) => {
-  const handleSubmit = async () => {
-    const postData = {
-      status: status,
-    };
-    const data = await updateCategoryStatus(id, postData);
-    console.log(data);
+const StatusModal = ({ id, status, show, handleClose }) => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await updateCategoryStatus(id, status);
     handleClose();
-    const updatedData = await getAllCategory();
-    setCategory(updatedData);
+    window.location.reload("/admin/category");
   };
 
   return (

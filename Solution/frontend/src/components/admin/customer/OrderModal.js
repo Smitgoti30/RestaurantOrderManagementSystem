@@ -76,7 +76,6 @@ function OrderModal(props) {
     } else {
       setTableNumberValid(true);
     }
-    debugger;
     // Validate menu items and quantities
     if (menuItems.some((item) => item.id === "" || item.quantity < 1)) {
       setMenuItemsValid(false);
@@ -90,7 +89,6 @@ function OrderModal(props) {
   const handlePlaceOrder = async () => {
     try {
       if (!validateForm()) return;
-      debugger;
       await createOrder({
         variables: {
           order: {

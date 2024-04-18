@@ -1,29 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Cart.module.css";
 
 const Cart = () => {
-  // const { cartItems, onRemove, onUpdateQuantity } = props;
+  const [cartItems, setCartItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  // Dummy data for demonstration
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Margherita Pizza", quantity: 2, price: 12.99 },
-    { id: 2, name: "Vegan Burger", quantity: 1, price: 9.99 },
-    { id: 3, name: "Caesar Salad", quantity: 3, price: 7.99 },
-  ]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedCartItems =
+      JSON.parse(sessionStorage.getItem("cartItems")) || [];
+    setCartItems(storedCartItems);
+    const totalPrice = storedCartItems.reduce(
+      (total, item) => total + item.totalPrice,
+      0
+    );
+    setTotalPrice(totalPrice);
+  }, []);
+
+  const handleDecreaseQuantity = (id) => {
+    console.log("Decreasing quantity for item with ID:", id);
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === id && item.quantity > 1) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    });
+    const totalPrice = updatedCartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+    setTotalPrice(totalPrice);
+    setCartItems(updatedCartItems);
+  };
+
+  const handleIncreaseQuantity = (id) => {
+    console.log("Increasing quantity for item with ID:", id);
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === id) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+
+    const totalPrice = updatedCartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+    setTotalPrice(totalPrice);
+    setCartItems(updatedCartItems);
+  };
 
   const onRemove = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
-  };
-
-  const onUpdateQuantity = (id, newQuantity) => {
-    if (newQuantity < 1) {
-      return; // Optionally, handle removing the item or alerting the user
-    }
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
+    const totalPrice = cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
     );
+    setTotalPrice(totalPrice);
   };
 
   const calculateTotal = (items) =>
@@ -31,42 +66,77 @@ const Cart = () => {
       .reduce((total, item) => total + item.quantity * item.price, 0)
       .toFixed(2);
 
+  const addOrder = async () => {
+    sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
+    sessionStorage.setItem("TotalPrice", JSON.parse(calculateTotal(cartItems)));
+    navigate("/checkout");
+  };
+
   return (
-    <div className="cart additional">
-      <h2>Cart</h2>
-      <div className="cart-items">
-        {cartItems.length > 0 ? (
-          cartItems.map((item) => (
-            <div className="cart-item" key={item.id}>
-              <div className="item-info">
-                <h4>{item.name}</h4>
-                <p>${item.price}</p>
+    <div className="row ccc-smit">
+      <h2 className="text-center text-decoration-underline p-2">Cart</h2>
+      <div className="col-3"></div>
+      <div className="cart col-6">
+        <ul>
+          {cartItems.map((item) => (
+            <li key={item.id} className="cart-item row p-2">
+              <div className="col-4 text-center">
+                <img
+                  src={
+                    item.image
+                      ? require(`../../assets/images/${item.image}`)
+                      : ""
+                  }
+                  className="cart-img"
+                  alt={item.image}
+                />
               </div>
-              <div className="quantity-controls">
+              <div className="col-4 text-center">
+                <p>{item.name}</p>
+                <div>
+                  <button
+                    className="btn-red p-2"
+                    onClick={() => handleDecreaseQuantity(item.id)}
+                  >
+                    -
+                  </button>
+                  <span className="m-3">{item.quantity}</span>
+                  <button
+                    className="btn-red p-2"
+                    onClick={() => handleIncreaseQuantity(item.id)}
+                  >
+                    +
+                  </button>
+                </div>
+                <h6 className="py-2">
+                  <b>Price: ${item.price}</b>
+                </h6>
+              </div>
+              <div className="col-4 text-center">
                 <button
-                  onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
+                  className="btn btn-red"
+                  onClick={() => onRemove(item.id)}
                 >
-                  -
-                </button>
-                <span>{item.quantity}</span>
-                <button
-                  onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                >
-                  +
+                  remove
                 </button>
               </div>
-              <div className="remove-item">
-                <button onClick={() => onRemove(item.id)}>Remove</button>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p>Your cart is empty.</p>
-        )}
+            </li>
+          ))}
+        </ul>
+        <div className="row">
+          <div className="cart-total text-center px-5 mx-5 col-12">
+            <strong className="text-red">Total : </strong>
+            <b> ${calculateTotal(cartItems)}</b>
+          </div>
+          <button
+            className="btn btn-red float-right mx-4 text-white"
+            onClick={() => addOrder()}
+          >
+            Checkout
+          </button>
+        </div>
       </div>
-      <div className="cart-total">
-        <strong>Total:</strong> ${calculateTotal(cartItems)}
-      </div>
+      <div className="col-3"></div>
     </div>
   );
 };

@@ -6,7 +6,6 @@ export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-
   // Login updates the user state and stores the token
   const login = ({ token, userType, id }) => {
     localStorage.setItem("authToken", token);
@@ -18,6 +17,9 @@ export const AuthProvider = ({ children }) => {
   // Logout clears the user state and removes the token
   const logout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("authType");
+    localStorage.removeItem("authId");
+    sessionStorage.removeItem("cartItems")
     setUser(null);
   };
 
@@ -27,12 +29,9 @@ export const AuthProvider = ({ children }) => {
     const type = localStorage.getItem("authType");
     const id = localStorage.getItem("authId");
     if (token) {
-      // Optional: Verify token validity with the server or decode it if it's a JWT
-      setUser({ type, id }); // Simplify, adjust based on your logic or token decoding
+      setUser({ token, type, id });
     }
   }, []);
 
-  const value = { user, login, logout };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{user, login, logout}}>{children}</AuthContext.Provider>;
 };

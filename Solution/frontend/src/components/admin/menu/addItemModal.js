@@ -16,30 +16,22 @@ const AddItemModal = ({ show, handleClose, setMenu }) => {
   }, []);
 
   const handleSubmit = async (event) => {
-
-
-
-
     event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
     const category_name = formData.get("Category")
+    const Image_name = formData.get("ItemName");
     const postData = 
         {
           name: formData.get("ItemName"),
           description: formData.get("Description"),
-          price: formData.get("Price"),
-          image: "Appetizers1.jpg",
-          category_name:category_name,
+          price: parseFloat(formData.get("Price")),
+          image: `${Image_name}.jpeg`,
+          category_name:`${category_name}`,
         };
-        console.log(postData);
-        // const file = await uploadFile(fileData)
-        // console.log(file);
     const data = await addMenu(postData);
     handleClose();
-    const datas = await getMenu();
-    setMenu(datas)
-    console.log(data);
+    window.location.reload()
   };
 
   return (
@@ -53,11 +45,11 @@ const AddItemModal = ({ show, handleClose, setMenu }) => {
             <div className="contactform">
               <div className="left">
                 <div className="input-fields">
-                  <label htmlFor="Category">Category:</label>
+                  <label className="text-red text-decoration-underline" htmlFor="Category">Category:</label>
                   {loading ? (
                     <Loading />
                   ) : (
-                    <select name="Category" id="itemCategory" required>
+                    <select className="ms-4 px-2" name="Category" id="itemCategory" required>
                       {category
                       
                       .filter(category => category.status)
@@ -69,30 +61,36 @@ const AddItemModal = ({ show, handleClose, setMenu }) => {
                     </select>
                   )}
                 </div>
+                <br/>
                 <div className="input-fields">
-                  <label htmlFor="ItemName">Item Name:</label>
+                  <label className="text-red text-decoration-underline" htmlFor="ItemName">Item Name:</label>
                   <input type="text" name="ItemName" id="ItemName" required />
                 </div>
+                <br/>
                 <div className="input-fields">
-                  <label htmlFor="Price">Price:</label>
+                  <label className="text-red text-decoration-underline" htmlFor="Price">Price:</label>
+                  <br/>
                   <input type="number" name="Price" id="Price" required />
                 </div>
               </div>
+              <br/>
               <div className="right">
                 <div className="input-fields">
-                  <label htmlFor="itemDescription">Description:</label>
-                  <textarea
+                  <label className="text-red text-decoration-underline" htmlFor="itemDescription">Description:</label>
+                  <input
                     name="Description"
                     id="itemDescription"
-                    rows="3"
+                    type="text"
                     required
-                  ></textarea>
+                  />
                 </div>
               </div>
             </div>
           </div>
           <hr />
+          <div className="text-end">
           <input className="btn btn-red" type="submit" value="ADD TO MENU" />
+          </div>
         </form>
       </Modal.Body>
     </Modal>

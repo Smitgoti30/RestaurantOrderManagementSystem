@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const receiptItemSchema = new mongoose.Schema({
-  name: String, // Name of the item
-  quantity: Number, // Quantity ordered
-  price: Number, // Price per item at the time of order
-  subTotal: Number, // Subtotal for this item (quantity * price)
-  tax: Number, // Tax amount for this item
+  name: String,
+  quantity: Number,
+  price: Number,
+  subTotal: Number,
+  tax: Number,
 });
 
 const receiptSchema = new mongoose.Schema({
@@ -24,7 +24,7 @@ const receiptSchema = new mongoose.Schema({
     phone: String,
     email: String,
   },
-  items: [receiptItemSchema], // Array of items ordered
+  items: [receiptItemSchema], 
   payment_method: { type: String, required: true },
   sub_total: { type: Number, required: true },
   tax_amount: { type: Number, required: true },

@@ -6,7 +6,7 @@ function AboutUs() {
       maxWidth: "800px",
       margin: "0 auto",
       padding: "20px",
-      textAlign: "center",
+      textAlign: "",
     },
     header: {
       textAlign: "center",
@@ -30,21 +30,46 @@ function AboutUs() {
       <h1 style={styles.header}>About Us</h1>
       <div style={styles.content}>
         <p style={styles.boldParagraph}>
-          Welcome to our Restaurant Order Management System!
+          Welcome to Food Restaurant, where flavors come alive and memories are
+          made!
+        </p>
+        <h3 style={styles.header}>Our Story</h3>
+        <p style={styles.paragraph}>
+          Founded in 1999, Food Restaurant has been a cornerstone of culinary
+          excellence in Waterloo ever since. It all started with a vision shared
+          by Kane Willianson, a passionate chef with a dream to create a dining
+          experience that not only tantalizes taste buds but also warms the
+          soul.
         </p>
         <p style={styles.paragraph}>
-          Our system aims to streamline the process of managing orders in a
-          restaurant, making it easier for both customers and staff.
+          Kane Willianson, driven by a profound love for food and a desire to
+          share it with the world, embarked on a journey to bring his culinary
+          creations to life. Armed with nothing but a fervent ambition and a
+          handful of cherished family recipes, he opened the doors of Food
+          Restaurant to the bustling streets of Waterloo.
         </p>
         <p style={styles.paragraph}>
-          With our platform, customers can place orders conveniently from their
-          devices, and restaurant staff can efficiently manage and fulfill those
-          orders.
+          From humble beginnings, our restaurant quickly gained a reputation for
+          its delectable dishes, warm hospitality, and inviting ambiance. With
+          each passing year, Food Restaurant has grown and evolved, yet our
+          commitment to serving exceptional food and creating unforgettable
+          dining experiences remains unwavering.
         </p>
+
+        <h3 style={styles.header}>Our Philosophy</h3>
         <p style={styles.paragraph}>
-          Whether you're a small local eatery or a large restaurant chain, our
-          system can help you improve your order management process and provide
-          better service to your customers.
+          At Food Restaurant, we believe that food is not merely sustenance; it
+          is a celebration of life, love, and culture. Every dish we prepare is
+          infused with passion, creativity, and the finest ingredients, sourced
+          locally and responsibly whenever possible. We take pride in our craft
+          and strive to delight every palate that graces our tables.
+        </p>
+        <h3 style={styles.header}>Join Us</h3>
+        <p style={styles.paragraph}>
+          WWhether you're craving a comforting classic or eager to explore bold
+          new flavors, Food Restaurant invites you to join us on a culinary
+          journey like no other. Come savor the taste of tradition, the joy of
+          discovery, and the warmth of community at Food Restaurant.
         </p>
         <p style={styles.paragraph}>
           Thank you for choosing our Restaurant Order Management System. If you

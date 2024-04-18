@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./authentication/AuthContext.js";
 import ProtectedRoute from "./authentication/ProtectedRoute.js";
 import HomeC from "./customer/Home";
@@ -17,6 +17,10 @@ import Receipt from "./Receipt";
 import CustomerDetails from "./admin/customer/CustomerDetails";
 import CheckoutPage from "./CheckoutPage";
 import Authentication from "./authentication/Authentication";
+import CategoryAdmin from "./admin/category/categoryAdmin.js";
+import { Success } from "./customer/success.js";
+import { Failed } from "./customer/failed.js";
+// import OnlineOrderMgmt from "./admin/customer/OnlineOrderMgmt.js";
 
 function Roms() {
   return (
@@ -28,6 +32,8 @@ function Roms() {
               <Route index element={<HomeC />} />
               <Route path="/auth" element={<Authentication />} />
               <Route path="/menu" element={<CategoryLayout />} />
+              <Route path="/success" element={<Success />} />
+              <Route path="/failed" element={<Failed />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/receipt/:receiptId" element={<Receipt />} />
@@ -41,12 +47,28 @@ function Roms() {
                   </ProtectedRoute>
                 }
               />
-
+              <Route
+                path="/admin/on/order"
+                element={
+                  <ProtectedRoute allowedTypes={["staff", "admin"]}>
+                    {/* <OnlineOrderMgmt /> */}
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/d3" element={<Navigate to="/d3/index.html" />} />
               <Route
                 path="/admin/menu"
                 element={
                   <ProtectedRoute allowedTypes={["staff", "admin"]}>
                     <MenuAdmin />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/category"
+                element={
+                  <ProtectedRoute allowedTypes={["staff", "admin"]}>
+                    <CategoryAdmin />
                   </ProtectedRoute>
                 }
               />

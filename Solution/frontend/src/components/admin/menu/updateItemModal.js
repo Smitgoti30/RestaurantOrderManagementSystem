@@ -30,11 +30,12 @@ const UpdateItemModal = ({
     const form = event.target;
     const formData = new FormData(form);
     const itemData = {
+      id:item._id,
       name: formData.get("ItemName"),
       description: formData.get("Description"),
-      price: formData.get("Price"),
+      price: parseFloat(formData.get("Price")),
     };
-    const data = await updateMenuItem( item._id, itemData);
+    const data = await updateMenuItem(itemData);
     handleClose();
     const updatedData = await getMenu();
     setMenu(updatedData);
@@ -48,7 +49,7 @@ const UpdateItemModal = ({
       <Modal.Body>
         <form onSubmit={handleSubmitItem}>
           <div className="mb-2">
-            <label htmlFor="ItemName">Item Name:</label>
+            <label className="text-red text-decoration-underline" htmlFor="ItemName">Item Name:</label>
             <input
               type="text"
               name="ItemName"
@@ -58,20 +59,22 @@ const UpdateItemModal = ({
               required
             />
           </div>
+          <br/>
           <div className="mb-2">
-            <label htmlFor="Description">Description:</label>
-            <textarea
+            <label className="text-red text-decoration-underline" htmlFor="Description">Description:</label>
+            <input
               name="Description"
               id="Description"
-              rows="2"
-              cols="26"
+              type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
-            ></textarea>
+            />
           </div>
+          <br/>
           <div className="mb-2">
-            <label htmlFor="Price">Price:</label>
+            <label className="text-red text-decoration-underline" htmlFor="Price">Price:</label>
+            <br/>
             <input
               type="number"
               name="Price"
@@ -82,7 +85,9 @@ const UpdateItemModal = ({
             />
           </div>
           <hr />
-          <input className="btn-red p-2" type="submit" value="UPDATE" />
+          <div className="text-end">
+          <input className="btn-red p-2" type="submit" value="UPDATE ITEM" />
+          </div>
         </form>
       </Modal.Body>
     </Modal>
