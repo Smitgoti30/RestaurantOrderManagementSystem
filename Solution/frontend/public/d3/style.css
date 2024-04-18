@@ -21,9 +21,10 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  border-radius: 5px;
 }
 .cls-common .btn-card {
-  width: 180px;
+  width: 300px;
   height: 180px;
   border-radius: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -176,11 +177,6 @@ body {
 
 .cls-common .extra {
   width: 120px;
-}
-
-.cls-common .extra a {
-  height: 60px;
-  border-radius: 10px;
 }
 
 nav {

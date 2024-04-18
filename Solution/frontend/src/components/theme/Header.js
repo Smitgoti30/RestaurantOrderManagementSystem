@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../authentication/AuthContext";
-
+import Logo from "../../../src/assets/images/Logo.gif";
 function Header() {
   const { user, logout } = useAuth();
 
@@ -38,7 +38,7 @@ function Header() {
       <nav className="navbar navbar-expand-lg">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            NAVBAR
+            <img src={Logo} alt="logo" height="46px" />
           </Link>
           <button
             className="navbar-toggler"
@@ -54,7 +54,7 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
               {renderNavLink("/admin/menu", "Menu", ["staff", "admin"])}
-              {renderNavLink("/admin/on/order", "Order", ["staff", "admin"])}
+              {/* {renderNavLink("/admin/on/order", "Order", ["staff", "admin"])} */}
               {renderNavLink("/customer", "Customer", ["staff", "admin"])}
               {renderNavLink(
                 "/menu",

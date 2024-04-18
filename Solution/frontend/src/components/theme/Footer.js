@@ -28,11 +28,11 @@ function Footer() {
               <div className="logo">
                 <a href="/">
                   <span>
-                    <b className="active">LOGO</b>
+                    <img src="../../Logo.gif" alt="logo" height="46px" />
                   </span>
                 </a>
               </div>
-              <div className="address">
+              <div className="address mt-2">
                 <p>108 University Ave</p>
                 <p>Waterloo, Ontario, N2J 2W2</p>
               </div>
@@ -51,8 +51,8 @@ function Footer() {
               </strong>
               <div className="copy">
                 <p>Deepam Patel | 8812460 </p>
-                <p>Smit Goti | 8812460 </p>
-                <p>Shivang Patel | 8812460 </p>
+                <p>Smit Goti | 8871022 </p>
+                <p>Shivang Patel | 8865389 </p>
               </div>
             </div>
           </div>
