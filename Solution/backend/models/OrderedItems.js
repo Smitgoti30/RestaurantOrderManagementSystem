@@ -9,7 +9,6 @@ const orderedItemsSchema = new mongoose.Schema({
   menu_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Menu",
-    required: true,
   },
   quantity: { type: Number, required: true },
   price: { type: Number, required: true },

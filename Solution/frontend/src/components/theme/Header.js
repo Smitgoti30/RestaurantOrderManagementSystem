@@ -5,6 +5,8 @@ import Logo from "../../../src/assets/images/Logo.gif";
 function Header() {
   const { user, logout } = useAuth();
 
+  const cartItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+  const itemCount = cartItems.length;
   const renderNavLink = (to, label, allowedTypes, openInNewTab = false) => {
     if (!user && !allowedTypes.includes("public")) return null;
     if (
@@ -53,9 +55,10 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
-              {renderNavLink("/admin/menu", "Menu", ["staff", "admin"])}
               {/* {renderNavLink("/admin/on/order", "Order", ["staff", "admin"])} */}
               {renderNavLink("/customer", "Customer", ["staff", "admin"])}
+              {renderNavLink("/admin/category", "Category", ["staff", "admin"])}
+              {renderNavLink("/admin/menu", "Menu", ["staff", "admin"])}
               {renderNavLink(
                 "/menu",
                 "Menu",
@@ -76,6 +79,15 @@ function Header() {
                 </li>
               ) : (
                 renderNavLink("/auth", "Login", ["public"])
+              )}
+              {renderNavLink(
+                "/cart",
+                <div className="cart-icon">
+                  <span role="img" aria-label="cart">
+                    🛒
+                  </span>
+                </div>,
+                ["online"]
               )}
             </ul>
           </div>

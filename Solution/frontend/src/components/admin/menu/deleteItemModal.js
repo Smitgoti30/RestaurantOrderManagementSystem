@@ -3,15 +3,12 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { getMenu, deleteMenuItem } from "../../../api";
 
-const DeleteItemModal = ({ item, show, handleClose, setMenu }) => {
-    const handleSubmit = async () => {
-        console.log(item);
-        const data = await deleteMenuItem(item);
-        console.log(data);
-        handleClose();
-        const updatedData = await getMenu();
-        setMenu(updatedData);
-      };
+const DeleteItemModal = ({ item, show, handleClose }) => {
+  const handleSubmit = async () => {
+      const data = await deleteMenuItem(item);
+      handleClose();
+      window.location.reload()
+    };
     
 
   return (
@@ -32,4 +29,4 @@ const DeleteItemModal = ({ item, show, handleClose, setMenu }) => {
   )
 }
 
-export default DeleteItemModal
+export default DeleteItemModal;

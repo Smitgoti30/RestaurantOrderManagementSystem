@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("authType");
     localStorage.removeItem("authId");
+    sessionStorage.removeItem("cartItems")
     setUser(null);
   };
 
@@ -32,7 +33,5 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const value = { user, login, logout };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{user, login, logout}}>{children}</AuthContext.Provider>;
 };

@@ -5,7 +5,6 @@ import ProtectedRoute from "./authentication/ProtectedRoute.js";
 import HomeC from "./customer/Home";
 import NoPage from "./NoPage";
 import Customer from "./admin/customer/Customer";
-import Reports from "./admin/dashboard/Reports";
 import MenuAdmin from "./admin/menu/MenuAdmin";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
@@ -18,7 +17,10 @@ import Receipt from "./Receipt";
 import CustomerDetails from "./admin/customer/CustomerDetails";
 import CheckoutPage from "./CheckoutPage";
 import Authentication from "./authentication/Authentication";
-import OnlineOrderMgmt from "./admin/customer/OnlineOrderMgmt.js";
+import CategoryAdmin from "./admin/category/categoryAdmin.js";
+import { Success } from "./customer/success.js";
+import { Failed } from "./customer/failed.js";
+// import OnlineOrderMgmt from "./admin/customer/OnlineOrderMgmt.js";
 
 function Roms() {
   return (
@@ -30,6 +32,8 @@ function Roms() {
               <Route index element={<HomeC />} />
               <Route path="/auth" element={<Authentication />} />
               <Route path="/menu" element={<CategoryLayout />} />
+              <Route path="/success" element={<Success />} />
+              <Route path="/failed" element={<Failed />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/receipt/:receiptId" element={<Receipt />} />
@@ -47,7 +51,7 @@ function Roms() {
                 path="/admin/on/order"
                 element={
                   <ProtectedRoute allowedTypes={["staff", "admin"]}>
-                    <OnlineOrderMgmt />
+                    {/* <OnlineOrderMgmt /> */}
                   </ProtectedRoute>
                 }
               />
@@ -57,6 +61,14 @@ function Roms() {
                 element={
                   <ProtectedRoute allowedTypes={["staff", "admin"]}>
                     <MenuAdmin />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/category"
+                element={
+                  <ProtectedRoute allowedTypes={["staff", "admin"]}>
+                    <CategoryAdmin />
                   </ProtectedRoute>
                 }
               />

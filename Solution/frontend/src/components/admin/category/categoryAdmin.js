@@ -57,8 +57,8 @@ const CategoryAdmin = () => {
     setShowStatus(true);
   };
   return (
-    <div className="menu-admin-class">
-      <h1 className="m-4">Item Category</h1>
+    <div className="menu-admin-class ccc-smit">
+      <h1 className="m-4 text-decoration-underline">Item Category</h1>
 
       <table className="table table-striped">
         <caption>
@@ -82,7 +82,9 @@ const CategoryAdmin = () => {
         <tbody>
           {categories.map((category, index) => (
             <tr key={index}>
-              <td>{category.category_name}</td>
+              <td>
+                <span className="decorated-text">{category.category_name}</span>
+              </td>
               <td>{category.description}</td>
               <td>
                 <span
@@ -112,7 +114,7 @@ const CategoryAdmin = () => {
         status={status}
         show={showStatus}
         handleClose={handleCloseStatus}
-        setCategory={(updatedData) => setCategories(updatedData)}
+        //setCategory={(updatedData) => setCategories(updatedData)}
       />
       <UpdateCategoryModal
         id={id}
